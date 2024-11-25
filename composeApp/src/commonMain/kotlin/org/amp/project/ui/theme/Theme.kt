@@ -1,5 +1,6 @@
 package org.amp.project.ui.theme
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
@@ -248,10 +249,21 @@ val unspecified_scheme = ColorFamily(
 )
 
 @Composable
+fun getColorScheme(
+    darkTheme: Boolean = isSystemInDarkTheme()
+): ColorScheme{
+    return if (darkTheme) darkScheme else lightScheme
+}
+
+@Composable
 fun AppTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable() () -> Unit
 ) {
+  val colorScheme = getColorScheme(darkTheme)
+
   MaterialTheme(
+    colorScheme = colorScheme,
     content = content
   )
 }
