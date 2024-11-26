@@ -17,7 +17,7 @@ fun ResumeScreen() {
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ){
-        ExperienceComposable()
+        ExperienceComposable(emptyList())
     }
 
 }

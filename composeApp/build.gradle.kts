@@ -88,6 +88,12 @@ android {
     }
 }
 
+compose.resources {
+    publicResClass = false
+    packageOfResClass = "composeResources"
+    generateResClass = auto
+}
+
 dependencies {
     implementation(libs.androidx.ui.text.google.fonts)
     implementation(libs.androidx.material3.android)
