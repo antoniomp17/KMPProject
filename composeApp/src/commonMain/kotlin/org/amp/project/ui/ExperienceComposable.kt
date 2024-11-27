@@ -64,20 +64,24 @@ fun JobItem(jobExperience: JobExperience, onClick: (jobExperience: JobExperience
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(16.dp),
-                verticalArrangement = Arrangement.SpaceBetween
+                verticalArrangement = Arrangement.SpaceAround
             ){
-                CoilImage(
-                    imageModel = {  jobExperience.companyImageUrl },
-                    imageOptions = ImageOptions(
-                        contentScale = ContentScale.Fit
+                if(jobExperience.companyImageUrl.isNotEmpty()){
+                    CoilImage(
+                        imageModel = {  jobExperience.companyImageUrl },
+                        imageOptions = ImageOptions(
+                            contentScale = ContentScale.Fit
+                        )
                     )
-                )
-                CoilImage(
-                    imageModel = {  jobExperience.clientImageUrl },
-                    imageOptions = ImageOptions(
-                        contentScale = ContentScale.Fit
+                }
+                if(jobExperience.clientImageUrl.isNotEmpty()){
+                    CoilImage(
+                        imageModel = {  jobExperience.clientImageUrl },
+                        imageOptions = ImageOptions(
+                            contentScale = ContentScale.Fit
+                        )
                     )
-                )
+                }
             }
         }
     }

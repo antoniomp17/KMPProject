@@ -5,10 +5,7 @@
     <string name="education">Education</string>
     <string name="certifications">Certifications</string>
 
-    <string name="akkodis_svg_url">https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Akkodis_logo.svg/1920px-Akkodis_logo.svg.png?20240102222423</string>
-    <string name="ntt_svg_url">https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/NTT-Data-Logo.svg/1920px-NTT-Data-Logo.svg.png?20160702012210</string>
     <string name="driguard_image_url">https://play-lh.googleusercontent.com/dT60biAUDS3iuxL6W8spwuuqp_VLY4VtRC6cwYv329aifgUxFkh-Gak_pHYDIeNDug=w240-h480-rw</string>
-    <string name="bmed_image_url">https://play-lh.googleusercontent.com/du6dYim5qLvBQJ3rXL-XcISeWvXjAY0bhRvAoY1eSmRxMOIozciwI39BwZhUYFprx4Cf=w240-h480-rw</string>
     <string name="uc3m_image_url">https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Logo_UC3M.svg/2048px-Logo_UC3M.svg.png</string>
 
 </resources>
