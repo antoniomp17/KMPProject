@@ -57,6 +57,9 @@ kotlin {
             //precompose
             api(libs.moe.tlaster.precompose)
             api(libs.moe.tlaster.precompose.viewmodel)
+
+            //landscapist-glide
+            implementation(libs.landscapist.coil3)
         }
     }
 }
@@ -86,6 +89,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+}
+
+compose.resources {
+    publicResClass = false
+    packageOfResClass = "composeResources"
+    generateResClass = auto
 }
 
 dependencies {

@@ -1,12 +1,13 @@
 [versions]
 agp = "8.5.2"
-android-compileSdk = "34"
+android-compileSdk = "35"
 android-minSdk = "24"
-android-targetSdk = "34"
+android-targetSdk = "35"
 androidx-activityCompose = "1.9.3"
 androidx-lifecycle = "2.8.4"
 compose-multiplatform = "1.7.1"
 kotlin = "2.0.21"
+landscapist-coil3 = "2.4.4"
 
 #imported library versions
 moe-tlaster-precompose = "1.6.2"
@@ -22,6 +23,9 @@ moe-tlaster-precompose = { module = "moe.tlaster:precompose", version.ref = "moe
 moe-tlaster-precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel", version.ref = "moe-tlaster-precompose" }
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
+
+#Landscapist-Glide
+landscapist-coil3 = { module = "com.github.skydoves:landscapist-coil3", version.ref = "landscapist-coil3" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
