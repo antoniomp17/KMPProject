@@ -41,7 +41,7 @@ fun JobItem(jobExperience: JobExperience, onClick: (jobExperience: JobExperience
 
     Card(
         modifier = Modifier
-            .width(198.dp)
+            .width(128.dp)
             .aspectRatio(1.2f)
             .padding(2.dp)
             .clickable { onClick(jobExperience) },
@@ -63,7 +63,7 @@ fun JobItem(jobExperience: JobExperience, onClick: (jobExperience: JobExperience
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .background(Color.Black.copy(alpha = 0.5f))
+                    .background(Color.Black.copy(alpha = 0.8f))
             )
 
             Column(
