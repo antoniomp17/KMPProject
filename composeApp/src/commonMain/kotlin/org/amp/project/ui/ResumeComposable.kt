@@ -27,9 +27,13 @@ import composeResources.driguard_image_url
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun ResumeLazyColumn(text: List<String>) {
+fun ResumeComposable(text: List<String>) {
     LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .aspectRatio(2.4f/text.size),
+        userScrollEnabled = false
     ){
         items(text) {
             ResumeItem(text = it)
