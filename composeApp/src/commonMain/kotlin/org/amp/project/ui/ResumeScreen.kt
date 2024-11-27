@@ -33,7 +33,7 @@ fun ResumeScreen() {
             style = MaterialTheme.typography.titleMedium,
             text = stringResource(Res.string.experience)
         )
-        ExperienceComposable(JobExperienceManager.fakeJobExperienceList)
+        ExperienceComposable{}
 
         HorizontalDivider()
 

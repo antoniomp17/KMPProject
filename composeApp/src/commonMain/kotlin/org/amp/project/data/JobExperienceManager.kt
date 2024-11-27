@@ -55,8 +55,8 @@ object JobExperienceManager {
             location = "Remote",
             startDate = "2021-03-01",
             endDate= "2022-08-31",
-            imageSmallUrl = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea-producto-techfire.jpg",
-            imageLargeUrl = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea-producto-techfire.jpg",
+            imageSmallUrl = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea_loitering-qslam40_web4-2048x1366.jpg",
+            imageLargeUrl = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea_loitering-qslam40_web4-2048x1366.jpg",
             description = ""
         ),
         JobExperience(

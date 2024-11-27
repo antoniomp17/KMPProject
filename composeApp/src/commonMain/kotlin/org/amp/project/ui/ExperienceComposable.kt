@@ -1,5 +1,6 @@
 package org.amp.project.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,21 +17,21 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
+import org.amp.project.data.JobExperienceManager
 import org.amp.project.model.JobExperience
 
 @Composable
-fun ExperienceComposable(jobExperienceList: List<JobExperience>) {
+fun ExperienceComposable(onJobExperienceClick: (jobExperience: JobExperience) -> Unit) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ){
-        items(jobExperienceList) {
-            JobItem(jobExperience = it){
-
-            }
+        items(JobExperienceManager.fakeJobExperienceList) {
+            JobItem(jobExperience = it, onClick = onJobExperienceClick)
         }
     }
 }
@@ -53,11 +54,16 @@ fun JobItem(jobExperience: JobExperience, onClick: (jobExperience: JobExperience
 
             CoilImage(
                 modifier = Modifier.fillMaxSize(),
-                imageModel = {  jobExperience.imageSmallUrl },
+                imageModel = { jobExperience.imageSmallUrl },
                 imageOptions = ImageOptions(
-                    contentScale = ContentScale.Crop,
-                    alpha = 0.5f
+                    contentScale = ContentScale.Crop
                 )
+            )
+
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(Color.Black.copy(alpha = 0.5f))
             )
 
             Column(
