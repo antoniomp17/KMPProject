@@ -8,7 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.amp.project.ui.ExperienceComposable
-import org.amp.project.ui.ResumeScreen
+import org.amp.project.ui.ResumeItem
 import org.amp.project.ui.theme.AppTheme
 
 @Preview(showBackground = true)
@@ -23,10 +23,10 @@ fun JobsCarouselPreview() {
 
 @Preview(showBackground = true)
 @Composable
-fun ResumeScreenPreview() {
+fun ResumeItemPreview() {
     AppTheme {
         Box(modifier = Modifier.padding(8.dp).fillMaxSize()) {
-            ResumeScreen()
+            ResumeItem("Text")
         }
     }
 }

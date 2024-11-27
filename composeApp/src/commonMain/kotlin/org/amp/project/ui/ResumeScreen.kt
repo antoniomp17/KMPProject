@@ -28,7 +28,6 @@ fun ResumeScreen() {
             style = MaterialTheme.typography.titleMedium,
             text = stringResource(Res.string.experience)
         )
-
         ExperienceComposable(listOf("Text", "Text", "Text"))
 
         HorizontalDivider()
@@ -37,6 +36,7 @@ fun ResumeScreen() {
             style = MaterialTheme.typography.titleMedium,
             text = stringResource(Res.string.personal_projects)
         )
+        ResumeLazyColumn(listOf("Text"))
     }
 
 }

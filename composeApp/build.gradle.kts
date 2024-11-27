@@ -57,6 +57,9 @@ kotlin {
             //precompose
             api(libs.moe.tlaster.precompose)
             api(libs.moe.tlaster.precompose.viewmodel)
+
+            //landscapist-glide
+            implementation(libs.landscapist.coil3)
         }
     }
 }
