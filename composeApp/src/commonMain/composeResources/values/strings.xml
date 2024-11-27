@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KMPProject</string>
-    <string name="experiences">Experiences</string>
+    <string name="experience">Experience</string>
+    <string name="personal_projects">Personal Projects</string>
 </resources>

@@ -47,8 +47,8 @@ fun JobItem(text: String){
             .background(Color.White.copy(alpha = 0.1f))
             .padding(16.dp)
         ){
-            Text(modifier = Modifier.weight(1f), text = text, style = MaterialTheme.typography.titleLarge)
-            Text(text = text, style = MaterialTheme.typography.titleMedium)
+            Text(modifier = Modifier.weight(1f), text = text, style = MaterialTheme.typography.headlineMedium)
+            Text(text = text, style = MaterialTheme.typography.titleLarge)
         }
     }
 }

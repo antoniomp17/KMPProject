@@ -8,20 +8,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.amp.project.ui.ExperienceComposable
-import org.amp.project.ui.JobItem
+import org.amp.project.ui.ResumeScreen
+import org.amp.project.ui.theme.AppTheme
 
 @Preview(showBackground = true)
 @Composable
-fun JobItemPreview() {
-    Box(modifier = Modifier.padding(16.dp).fillMaxSize()) {
-        JobItem(text = "Text")
+fun JobsCarouselPreview() {
+    AppTheme {
+        Box(modifier = Modifier.padding(8.dp).fillMaxSize()) {
+            ExperienceComposable(listOf("Text", "Text", "Text"))
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun JobsCarouselPreview() {
-    Box(modifier = Modifier.padding(8.dp).fillMaxSize()) {
-        ExperienceComposable(listOf("Text", "Text", "Text"))
+fun ResumeScreenPreview() {
+    AppTheme {
+        Box(modifier = Modifier.padding(8.dp).fillMaxSize()) {
+            ResumeScreen()
+        }
     }
 }
