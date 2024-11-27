@@ -1,5 +1,6 @@
 package org.amp.project.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,65 +14,70 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
-import composeResources.Res
-import composeResources.bmed_background_url
-import org.jetbrains.compose.resources.stringResource
+import org.amp.project.model.JobExperience
 
 @Composable
-fun ExperienceComposable(text: List<String>) {
+fun ExperienceComposable(jobExperienceList: List<JobExperience>) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ){
-        items(text) {
-            JobItem(text = it)
+        items(jobExperienceList) {
+            JobItem(jobExperience = it){
+
+            }
         }
     }
 }
 
 @Composable
-fun JobItem(text: String){
-
-    val urlString = stringResource(Res.string.bmed_background_url)
+fun JobItem(jobExperience: JobExperience, onClick: (jobExperience: JobExperience) -> Unit){
 
     Card(
         modifier = Modifier
             .width(198.dp)
             .aspectRatio(1.2f)
-            .padding(2.dp),
+            .padding(2.dp)
+            .clickable { onClick(jobExperience) },
         shape = RoundedCornerShape(percent = 30),
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)){
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
+    ){
 
         Box(modifier = Modifier.fillMaxSize()){
 
             CoilImage(
                 modifier = Modifier.fillMaxSize(),
-                imageModel = {  urlString },
+                imageModel = {  jobExperience.imageSmallUrl },
                 imageOptions = ImageOptions(
                     contentScale = ContentScale.Crop,
-                    alpha = 0.75f
+                    alpha = 0.5f
                 )
             )
 
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(16.dp)
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.SpaceBetween
             ){
-                Text(
-                    modifier = Modifier.weight(1f),
-                    text = text,
-                    style = MaterialTheme.typography.headlineMedium)
-                Text(
-                    text = text,
-                    style = MaterialTheme.typography.titleLarge)
+                CoilImage(
+                    imageModel = {  jobExperience.companyImageUrl },
+                    imageOptions = ImageOptions(
+                        contentScale = ContentScale.Fit
+                    )
+                )
+                CoilImage(
+                    imageModel = {  jobExperience.clientImageUrl },
+                    imageOptions = ImageOptions(
+                        contentScale = ContentScale.Fit
+                    )
+                )
             }
         }
     }
