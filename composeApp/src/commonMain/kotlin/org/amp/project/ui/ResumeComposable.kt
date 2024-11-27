@@ -69,7 +69,7 @@ fun ResumeItem(text: String){
                     .padding(16.dp).fillMaxWidth(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            ){
                 Text(
                     text = text,
                     style = MaterialTheme.typography.headlineMedium,
