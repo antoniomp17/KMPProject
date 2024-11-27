@@ -36,15 +36,16 @@ fun JobItem(text: String){
     Card(
         modifier = Modifier
             .width(198.dp)
-            .aspectRatio(1.2f),
+            .aspectRatio(1.2f)
+            .padding(2.dp),
         shape = RoundedCornerShape(percent = 30),
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)){
         Column(
             modifier = Modifier
-            .padding(16.dp)
             .fillMaxSize()
             .background(Color.White.copy(alpha = 0.1f))
+            .padding(16.dp)
         ){
             Text(modifier = Modifier.weight(1f), text = text, style = MaterialTheme.typography.titleLarge)
             Text(text = text, style = MaterialTheme.typography.titleMedium)

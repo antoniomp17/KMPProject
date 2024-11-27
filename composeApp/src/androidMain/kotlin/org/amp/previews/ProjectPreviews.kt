@@ -21,7 +21,7 @@ fun JobItemPreview() {
 @Preview(showBackground = true)
 @Composable
 fun JobsCarouselPreview() {
-    Box(modifier = Modifier.padding(16.dp).fillMaxSize()) {
+    Box(modifier = Modifier.padding(8.dp).fillMaxSize()) {
         ExperienceComposable(listOf("Text", "Text", "Text"))
     }
 }
