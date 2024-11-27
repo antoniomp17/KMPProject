@@ -18,7 +18,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import com.skydoves.landscapist.ImageOptions
+import com.skydoves.landscapist.coil3.CoilImage
+import composeResources.Res
+import composeResources.bmed_background_url
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun ExperienceComposable(text: List<String>) {
@@ -33,6 +39,9 @@ fun ExperienceComposable(text: List<String>) {
 
 @Composable
 fun JobItem(text: String){
+
+    val urlString = stringResource(Res.string.bmed_background_url)
+
     Card(
         modifier = Modifier
             .width(198.dp)
@@ -41,14 +50,31 @@ fun JobItem(text: String){
         shape = RoundedCornerShape(percent = 30),
         elevation = CardDefaults.cardElevation(defaultElevation = 5.dp),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)){
-        Column(
-            modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White.copy(alpha = 0.1f))
-            .padding(16.dp)
-        ){
-            Text(modifier = Modifier.weight(1f), text = text, style = MaterialTheme.typography.headlineMedium)
-            Text(text = text, style = MaterialTheme.typography.titleLarge)
+
+        Box(modifier = Modifier.fillMaxSize()){
+
+            CoilImage(
+                modifier = Modifier.fillMaxSize(),
+                imageModel = {  urlString },
+                imageOptions = ImageOptions(
+                    contentScale = ContentScale.Crop,
+                    alpha = 0.75f
+                )
+            )
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ){
+                Text(
+                    modifier = Modifier.weight(1f),
+                    text = text,
+                    style = MaterialTheme.typography.headlineMedium)
+                Text(
+                    text = text,
+                    style = MaterialTheme.typography.titleLarge)
+            }
         }
     }
 }
