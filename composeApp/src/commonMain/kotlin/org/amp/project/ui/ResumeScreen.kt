@@ -9,16 +9,17 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import composeResources.Res
-import composeResources.certifications
-import composeResources.education
-import composeResources.personal_projects
 import org.amp.project.model.JobExperience
+import org.amp.project.model.ResumeItem
 import org.amp.project.presentation.JobExperienceUiState
-import org.jetbrains.compose.resources.stringResource
+import org.amp.project.presentation.ResumeItemUiState
 
 @Composable
-fun ResumeScreen(uiState: JobExperienceUiState, onJobExperienceClick: (jobExperience: JobExperience) -> Unit) {
+fun ResumeScreen(jobExperienceUiState: JobExperienceUiState,
+                 resumeItemUiState: ResumeItemUiState,
+                 onJobExperienceClick: (jobExperience: JobExperience) -> Unit,
+                 onResumeItemClick: (resumeItem: ResumeItem) -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -26,9 +27,9 @@ fun ResumeScreen(uiState: JobExperienceUiState, onJobExperienceClick: (jobExperi
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ){
-        ExperienceComposable(jobExperienceList = uiState.jobExperiences, onJobExperienceClick = onJobExperienceClick)
-        ResumeComposable(stringResource(Res.string.personal_projects), listOf("Text"))
-        ResumeComposable(stringResource(Res.string.education), listOf("Text"))
-        ResumeComposable(stringResource(Res.string.certifications), listOf("Text"))
+        ExperienceComposable(jobExperienceList = jobExperienceUiState.jobExperiences, onJobExperienceClick = onJobExperienceClick)
+        ResumeComposable(resumeItemList = resumeItemUiState.projectResumeItems, onResumeItemClick = onResumeItemClick)
+        ResumeComposable(resumeItemList = resumeItemUiState.educationResumeItems, onResumeItemClick = onResumeItemClick)
+        ResumeComposable(resumeItemList = resumeItemUiState.certificateResumeItems, onResumeItemClick = onResumeItemClick)
     }
 }

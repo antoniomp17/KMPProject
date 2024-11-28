@@ -58,19 +58,19 @@ private fun ExperienceLazyRowComposable(jobExperienceList: List<JobExperience>,
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ){
         items(jobExperienceList) { jobExperience ->
-            JobItem(jobExperience = jobExperience, onClick = onJobExperienceClick)
+            JobItem(jobExperience = jobExperience, onJobExperienceClick = onJobExperienceClick)
         }
     }
 }
 
 @Composable
-private fun JobItem(jobExperience: JobExperience, onClick: (jobExperience: JobExperience) -> Unit){
+private fun JobItem(jobExperience: JobExperience, onJobExperienceClick: (jobExperience: JobExperience) -> Unit){
 
     Column(
         modifier = Modifier
         .width(192.dp)
         .aspectRatio(1.2f)
-        .clickable { onClick(jobExperience) }
+        .clickable { onJobExperienceClick(jobExperience) }
     ){
         CoilImage(
             modifier = Modifier

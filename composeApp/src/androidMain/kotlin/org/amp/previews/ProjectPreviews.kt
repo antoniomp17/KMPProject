@@ -8,7 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import org.amp.project.data.JobExperienceManager
+import org.amp.project.data.ResumeItemManager
 import org.amp.project.presentation.JobExperienceUiState
+import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.ui.ResumeScreen
 import org.amp.project.ui.theme.AppTheme
 
@@ -18,10 +20,14 @@ fun ResumeScreenPreview() {
     AppTheme {
         Box(modifier = Modifier.padding(8.dp).fillMaxSize()) {
             ResumeScreen(
-                uiState = JobExperienceUiState(
+                jobExperienceUiState = JobExperienceUiState(
                     jobExperiences = JobExperienceManager.fakeJobExperienceList
                 ),
-                onJobExperienceClick = {}
+                resumeItemUiState = ResumeItemUiState(
+                    projectResumeItems = ResumeItemManager.fakeResumeItemList
+                ),
+                onJobExperienceClick = {},
+                onResumeItemClick = {}
             )
         }
     }

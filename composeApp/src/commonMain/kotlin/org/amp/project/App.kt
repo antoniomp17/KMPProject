@@ -7,7 +7,10 @@ import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.viewmodel.viewModel
 import org.amp.project.data.JobExperienceManager
 import org.amp.project.data.JobExperienceRepositoryImpl
+import org.amp.project.data.ResumeItemManager
+import org.amp.project.data.ResumeItemRepositoryImpl
 import org.amp.project.presentation.JobExperienceViewModel
+import org.amp.project.presentation.ResumeItemViewModel
 import org.amp.project.ui.ResumeScreen
 import org.amp.project.ui.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -17,15 +20,21 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun App() {
     PreComposeApp{
 
-        val viewModel = viewModel(modelClass = JobExperienceViewModel::class) {
+        val jobExperienceViewModel = viewModel(modelClass = JobExperienceViewModel::class) {
             JobExperienceViewModel(repo = JobExperienceRepositoryImpl(JobExperienceManager))
         }
-        val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+        val resumeItemViewModel = viewModel(modelClass = ResumeItemViewModel::class) {
+            ResumeItemViewModel(repo = ResumeItemRepositoryImpl(ResumeItemManager))
+        }
+        val jobExperienceUiState by jobExperienceViewModel.uiState.collectAsStateWithLifecycle()
+        val resumeItemUiState by resumeItemViewModel.uiState.collectAsStateWithLifecycle()
 
         AppTheme {
             ResumeScreen(
-                uiState = uiState,
-                onJobExperienceClick = {}
+                jobExperienceUiState = jobExperienceUiState,
+                resumeItemUiState = resumeItemUiState,
+                onJobExperienceClick = {},
+                onResumeItemClick = {}
             )
         }
     }
