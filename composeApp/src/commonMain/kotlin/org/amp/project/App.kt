@@ -1,9 +1,13 @@
 package org.amp.project
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import moe.tlaster.precompose.PreComposeApp
+import moe.tlaster.precompose.viewmodel.viewModel
+import org.amp.project.data.JobExperienceManager
+import org.amp.project.data.JobExperienceRepositoryImpl
+import org.amp.project.presentation.JobExperienceViewModel
 import org.amp.project.ui.ResumeScreen
 import org.amp.project.ui.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -12,8 +16,17 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Preview
 fun App() {
     PreComposeApp{
+
+        val viewModel = viewModel(modelClass = JobExperienceViewModel::class) {
+            JobExperienceViewModel(repo = JobExperienceRepositoryImpl(JobExperienceManager))
+        }
+        val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+
         AppTheme {
-            ResumeScreen()
+            ResumeScreen(
+                uiState = uiState,
+                onJobExperienceClick = {}
+            )
         }
     }
 }

@@ -11,13 +11,12 @@ object JobExperienceManager {
             id = currentId++,
             companyName = "Akkodis",
             companyImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Akkodis_logo.svg/1920px-Akkodis_logo.svg.png?20240102222423",
-            clientName = "NTT Data",
-            clientImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/NTT-Data-Logo.svg/1920px-NTT-Data-Logo.svg.png?20160702012210",
+            clientName = "Mediolanum",
+            clientImageUrl = "https://blog.bancomediolanum.es/wp-content/uploads/2016/09/mediolanum_banking_group.png",
             location = "Remote",
             startDate = "2023-07-01",
             endDate= "2024-10-01",
-            imageSmallUrl = "https://blog.bancomediolanum.es/wp-content/uploads/2019/07/Banco-Mediolanum_Tipologi%CC%81a-de-Producto_NdP-600x400.png",
-            imageLargeUrl = "https://blog.bancomediolanum.es/wp-content/uploads/2019/07/Banco-Mediolanum_Tipologi%CC%81a-de-Producto_NdP-600x400.png",
+            image = "https://img.freepik.com/free-photo/credit-cards-that-are-stacked-floor_1150-16382.jpg?t=st=1732777387~exp=1732780987~hmac=44786d307fe850b5376b32c4d7c7c7d8af659496ae1e156bb7b12eb056320881&w=1380",
             description = ""
         ),
         JobExperience(
@@ -29,8 +28,7 @@ object JobExperienceManager {
             location = "Remote",
             startDate = "2023-06-30",
             endDate= "2024-02-01",
-            imageSmallUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Distrito_Telef%C3%B3nica_%28Madrid%29_04.jpg/800px-Distrito_Telef%C3%B3nica_%28Madrid%29_04.jpg?20111101170236",
-            imageLargeUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Distrito_Telef%C3%B3nica_%28Madrid%29_04.jpg/800px-Distrito_Telef%C3%B3nica_%28Madrid%29_04.jpg?20111101170236",
+            image = "https://img2.rtve.es/i/?w=1600&i=01716896940831.jpg",
             description = ""
         ),
         JobExperience(
@@ -42,8 +40,7 @@ object JobExperienceManager {
             location = "Remote",
             startDate = "2022-09-01",
             endDate= "2024-02-01",
-            imageSmallUrl = "https://img.freepik.com/foto-gratis/asunto-comunicacion-conversacion-conversacion-juntos_1418-82.jpg?t=st=1732731376~exp=1732734976~hmac=d0df752129d98cbbec84412e2cd3bd4cd1275fffd6bfaffc0a7c358dd7c36168&w=1380",
-            imageLargeUrl = "https://img.freepik.com/foto-gratis/asunto-comunicacion-conversacion-conversacion-juntos_1418-82.jpg?t=st=1732731376~exp=1732734976~hmac=d0df752129d98cbbec84412e2cd3bd4cd1275fffd6bfaffc0a7c358dd7c36168&w=1380",
+            image = "https://img.freepik.com/foto-gratis/asunto-comunicacion-conversacion-conversacion-juntos_1418-82.jpg?t=st=1732731376~exp=1732734976~hmac=d0df752129d98cbbec84412e2cd3bd4cd1275fffd6bfaffc0a7c358dd7c36168&w=1380",
             description = ""
         ),
         JobExperience(
@@ -55,8 +52,7 @@ object JobExperienceManager {
             location = "Remote",
             startDate = "2021-03-01",
             endDate= "2022-08-31",
-            imageSmallUrl = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea_loitering-qslam40_web4-2048x1366.jpg",
-            imageLargeUrl = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea_loitering-qslam40_web4-2048x1366.jpg",
+            image = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea_loitering-qslam40_web4-2048x1366.jpg",
             description = ""
         ),
         JobExperience(
@@ -68,8 +64,7 @@ object JobExperienceManager {
             location = "Remote",
             startDate = "2018-08-01",
             endDate= "2019-07-31",
-            imageSmallUrl = "https://static.esmartcity.es/media/2019/11/presentan-innovador-sistema-basado-5g-situaciones-emergencias-sanitarias-1.png",
-            imageLargeUrl = "https://static.esmartcity.es/media/2019/11/presentan-innovador-sistema-basado-5g-situaciones-emergencias-sanitarias-1.png",
+            image = "https://static.esmartcity.es/media/2019/11/presentan-innovador-sistema-basado-5g-situaciones-emergencias-sanitarias-1.png",
             description = ""
         )
     )

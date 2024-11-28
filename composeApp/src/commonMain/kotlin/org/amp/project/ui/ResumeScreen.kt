@@ -17,11 +17,12 @@ import composeResources.certifications
 import composeResources.education
 import composeResources.experience
 import composeResources.personal_projects
-import org.amp.project.data.JobExperienceManager
+import org.amp.project.model.JobExperience
+import org.amp.project.presentation.JobExperienceUiState
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun ResumeScreen() {
+fun ResumeScreen(uiState: JobExperienceUiState, onJobExperienceClick: (jobExperience: JobExperience) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -33,7 +34,10 @@ fun ResumeScreen() {
             style = MaterialTheme.typography.titleMedium,
             text = stringResource(Res.string.experience)
         )
-        ExperienceComposable{}
+        ExperienceComposable(
+            jobExperienceList = uiState.jobExperiences,
+            onJobExperienceClick = onJobExperienceClick
+        )
 
         HorizontalDivider()
 

@@ -9,7 +9,6 @@ data class JobExperience(
     val location: String,
     val startDate: String,
     val endDate: String,
-    val imageSmallUrl: String,
-    val imageLargeUrl: String,
+    val image: String,
     val description: String
 )
