@@ -16,7 +16,7 @@ object JobExperienceManager {
             location = "Remote",
             startDate = "2023-07-01",
             endDate= "2024-10-01",
-            image = "https://img.freepik.com/free-photo/credit-cards-that-are-stacked-floor_1150-16382.jpg?t=st=1732777387~exp=1732780987~hmac=44786d307fe850b5376b32c4d7c7c7d8af659496ae1e156bb7b12eb056320881&w=1380",
+            image = "https://blog.bancomediolanum.es/wp-content/uploads/2021/05/Banco-Mediolanum.jpeg",
             description = ""
         ),
         JobExperience(
@@ -28,7 +28,7 @@ object JobExperienceManager {
             location = "Remote",
             startDate = "2023-06-30",
             endDate= "2024-02-01",
-            image = "https://img2.rtve.es/i/?w=1600&i=01716896940831.jpg",
+            image = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Distrito_Telef%C3%B3nica_%28Madrid%29_09.jpg/1920px-Distrito_Telef%C3%B3nica_%28Madrid%29_09.jpg",
             description = ""
         ),
         JobExperience(
