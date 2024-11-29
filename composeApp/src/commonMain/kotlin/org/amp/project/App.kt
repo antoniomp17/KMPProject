@@ -19,16 +19,7 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Preview
 fun App() {
     PreComposeApp{
-
-        val jobExperienceViewModel = viewModel(modelClass = JobExperienceViewModel::class) {
-            JobExperienceViewModel(repo = JobExperienceRepositoryImpl(JobExperienceManager))
-        }
-        val resumeItemViewModel = viewModel(modelClass = ResumeItemViewModel::class) {
-            ResumeItemViewModel(repo = ResumeItemRepositoryImpl(ResumeItemManager))
-        }
-        val jobExperienceUiState by jobExperienceViewModel.uiState.collectAsStateWithLifecycle()
-        val resumeItemUiState by resumeItemViewModel.uiState.collectAsStateWithLifecycle()
-
+        /*
         AppTheme {
             ResumeScreen(
                 jobExperienceUiState = jobExperienceUiState,
@@ -37,5 +28,7 @@ fun App() {
                 onResumeItemClick = {}
             )
         }
+
+         */
     }
 }
