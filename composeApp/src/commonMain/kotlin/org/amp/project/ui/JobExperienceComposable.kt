@@ -89,7 +89,7 @@ private fun JobItem(jobExperience: JobExperience, onJobExperienceClick: (jobExpe
 
         Text(
             text = jobExperience.companyName,
-            style = MaterialTheme.typography.titleSmall,
+            style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
             letterSpacing = 0.5.sp,
             color = primaryLight
@@ -97,7 +97,7 @@ private fun JobItem(jobExperience: JobExperience, onJobExperienceClick: (jobExpe
 
         Text(
             text = jobExperience.clientName,
-            style = MaterialTheme.typography.bodySmall,
+            style = MaterialTheme.typography.bodyMedium,
             fontWeight = FontWeight.Light,
             letterSpacing = 0.5.sp
         )
