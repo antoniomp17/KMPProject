@@ -23,7 +23,7 @@ fun ResumeScreen(jobExperienceUiState: JobExperienceUiState,
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(start = 16.dp, end = 16.dp)
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ){

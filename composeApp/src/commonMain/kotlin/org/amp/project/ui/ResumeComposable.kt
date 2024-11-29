@@ -62,7 +62,7 @@ private fun ResumeLazyColumnComposable(
         verticalArrangement = Arrangement.spacedBy(8.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(3f/resumeItemList.size),
+            .aspectRatio(2.8f/resumeItemList.size),
         userScrollEnabled = false
     ){
         items(resumeItemList) {
