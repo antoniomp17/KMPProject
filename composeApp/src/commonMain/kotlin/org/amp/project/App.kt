@@ -93,7 +93,7 @@ fun App() {
                                 TopBarTypes.DETAILED_INFO -> {
                                     IconButton(
                                         modifier = Modifier.padding(start = 16.dp),
-                                        onClick = { /* TODO: Acción del ícono */ }
+                                        onClick = { navigator.popBackStack() }
                                     ) {
                                         Icon(
                                             imageVector = Icons.AutoMirrored.Default.ArrowBack,
