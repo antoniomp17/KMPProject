@@ -1,5 +1,6 @@
 package org.amp.project.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -25,7 +26,9 @@ import androidx.compose.ui.unit.sp
 import com.skydoves.landscapist.coil3.CoilImage
 import composeResources.Res
 import composeResources.experience
+import composeResources.image_loaded
 import org.amp.project.model.JobExperience
+import org.amp.project.ui.theme.FailureLoadingImage
 import org.amp.project.ui.theme.onBackgroundLight
 import org.amp.project.ui.theme.primaryLight
 import org.jetbrains.compose.resources.stringResource
@@ -84,6 +87,16 @@ private fun JobItem(jobExperience: JobExperience, onJobExperienceClick: (jobExpe
                         modifier = Modifier.align(Alignment.Center)
                     )
                 }
+            },
+            success = { _, painter ->
+                Image(
+                    painter = painter,
+                    contentDescription = stringResource(Res.string.image_loaded),
+                    modifier = Modifier.fillMaxWidth()
+                )
+            },
+            failure = {
+                FailureLoadingImage()
             }
         )
 

@@ -5,4 +5,5 @@
     <string name="education">Education</string>
     <string name="certifications">Certifications</string>
     <string name="amp_logo">AMP Logo</string>
+    <string name="image_loaded">Image Loaded</string>
 </resources>
