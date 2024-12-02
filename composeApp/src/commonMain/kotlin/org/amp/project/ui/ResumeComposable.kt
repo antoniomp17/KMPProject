@@ -1,5 +1,6 @@
 package org.amp.project.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -30,10 +31,13 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
+import composeResources.Res
+import composeResources.image_loaded
 import org.amp.project.model.ResumeItem
+import org.amp.project.ui.theme.FailureLoadingImage
 import org.amp.project.ui.theme.onBackgroundLight
-import org.amp.project.ui.theme.onSurfaceLight
 import org.amp.project.ui.theme.primaryLight
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun ResumeComposable(
@@ -107,6 +111,9 @@ private fun ResumeItem(
                             modifier = Modifier.align(Alignment.Center)
                         )
                     }
+                },
+                failure = {
+                    FailureLoadingImage()
                 }
             )
 

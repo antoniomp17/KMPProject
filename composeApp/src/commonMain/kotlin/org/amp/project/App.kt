@@ -3,6 +3,7 @@ package org.amp.project
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -27,6 +28,7 @@ import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
 import composeResources.Res
 import composeResources.amp_logo
+import composeResources.image_loaded
 import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.rememberNavigator
@@ -34,6 +36,7 @@ import org.amp.project.ui.theme.AppTheme
 import org.amp.project.data.Links
 import org.amp.project.data.TopBarTypes
 import org.amp.project.navigation.Navigation
+import org.amp.project.ui.theme.FailureLoadingImage
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -85,7 +88,7 @@ fun App() {
                                                 }
                                             },
                                             failure = {
-                                                /* TODO: Acción de error en CoilImages */
+                                                FailureLoadingImage()
                                             }
                                         )
                                     }
