@@ -87,6 +87,13 @@ fun App() {
                                                     )
                                                 }
                                             },
+                                            success = { _, painter ->
+                                                Image(
+                                                    painter = painter,
+                                                    contentDescription = stringResource(Res.string.image_loaded),
+                                                    modifier = Modifier.fillMaxWidth()
+                                                )
+                                            },
                                             failure = {
                                                 FailureLoadingImage()
                                             }
