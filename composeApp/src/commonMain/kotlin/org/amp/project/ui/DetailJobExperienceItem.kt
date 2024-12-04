@@ -3,6 +3,7 @@ package org.amp.project.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -56,30 +57,34 @@ fun DetailJobExperienceItem(
         Spacer(modifier = Modifier.height(32.dp))
 
         Text(
+            modifier = Modifier.fillMaxWidth(),
             text = "${stringResource(Res.string.position)}: ${jobExperience.position}",
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             letterSpacing = 0.5.sp,
-            color = primaryLight
+            textAlign = TextAlign.Center
         )
 
-        Text(
-            text = "${stringResource(Res.string.company)}: ${jobExperience.companyName}",
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 0.5.sp,
-            color = primaryLight
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceEvenly){
+            Text(
+                text = "${stringResource(Res.string.company)}: ${jobExperience.companyName}",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 0.5.sp
+            )
+
+            Text(
+                text = "${stringResource(Res.string.client)}: ${jobExperience.clientName}",
+                style = MaterialTheme.typography.titleMedium,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 0.5.sp
+            )
+        }
 
         Text(
-            text = "${stringResource(Res.string.client)}: ${jobExperience.clientName}",
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 0.5.sp,
-            color = primaryLight
-        )
-
-        Text(
+            modifier = Modifier.fillMaxWidth(),
             text = "${stringResource(Res.string.duration)}: " +
                     "${jobExperience.startDate} ${
                 if(jobExperience.startDate != jobExperience.endDate){
@@ -88,12 +93,13 @@ fun DetailJobExperienceItem(
                     ""
                 }
             }",
-            style = MaterialTheme.typography.labelLarge,
+            style = MaterialTheme.typography.titleSmall,
             fontWeight = FontWeight.Light,
-            letterSpacing = 0.5.sp
+            letterSpacing = 0.5.sp,
+            textAlign = TextAlign.Center
         )
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(16.dp))
 
         CoilImage(
             modifier = Modifier
@@ -116,7 +122,7 @@ fun DetailJobExperienceItem(
             }
         )
 
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(16.dp))
 
         RichText(
             state = richTextState,
