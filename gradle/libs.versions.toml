@@ -1,5 +1,5 @@
 [versions]
-agp = "8.7.2"
+agp = "8.7.3"
 android-compileSdk = "35"
 android-minSdk = "24"
 android-targetSdk = "35"
@@ -8,6 +8,7 @@ androidx-lifecycle = "2.8.4"
 compose-multiplatform = "1.7.1"
 kotlin = "2.1.0"
 landscapist-coil3 = "2.4.4"
+richeditor-compose = "1.0.0-rc10"
 
 #imported library versions
 moe-tlaster-precompose = "1.6.2"
@@ -24,8 +25,11 @@ moe-tlaster-precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel"
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
 
-#Landscapist-Glide
+#landscapist-Glide
 landscapist-coil3 = { module = "com.github.skydoves:landscapist-coil3", version.ref = "landscapist-coil3" }
+
+#compose rich editor
+richeditor-compose = { module = "com.mohamedrejeb.richeditor:richeditor-compose", version.ref = "richeditor-compose" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

@@ -1,6 +1,5 @@
 package org.amp.project.ui
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -26,7 +25,6 @@ import androidx.compose.ui.unit.sp
 import com.skydoves.landscapist.coil3.CoilImage
 import composeResources.Res
 import composeResources.experience
-import composeResources.image_loaded
 import org.amp.project.model.JobExperience
 import org.amp.project.ui.theme.FailureLoadingImage
 import org.amp.project.ui.theme.onBackgroundLight
@@ -34,7 +32,7 @@ import org.amp.project.ui.theme.primaryLight
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun ExperienceComposable(
+fun JobExperienceComposable(
     jobExperienceList: List<JobExperience>,
     onJobExperienceClick: (jobExperience: JobExperience) -> Unit
 ) {
@@ -47,7 +45,7 @@ fun ExperienceComposable(
             color = onBackgroundLight
         )
         Spacer(modifier = Modifier.height(4.dp))
-        ExperienceLazyRowComposable(
+        JobExperienceLazyRowComposable(
             jobExperienceList = jobExperienceList,
             onJobExperienceClick = onJobExperienceClick
         )
@@ -55,8 +53,8 @@ fun ExperienceComposable(
 }
 
 @Composable
-private fun ExperienceLazyRowComposable(jobExperienceList: List<JobExperience>,
-                                onJobExperienceClick: (jobExperience: JobExperience) -> Unit){
+private fun JobExperienceLazyRowComposable(jobExperienceList: List<JobExperience>,
+                                           onJobExperienceClick: (jobExperience: JobExperience) -> Unit){
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(8.dp)
     ){

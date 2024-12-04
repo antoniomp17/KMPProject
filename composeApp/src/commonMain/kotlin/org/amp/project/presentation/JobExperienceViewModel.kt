@@ -35,6 +35,8 @@ class JobExperienceViewModel(private val repo: JobExperienceRepository): ViewMod
         }
     }
 
-    fun getJobExperienceById(id: Long) = allJobExperiences.first { it.id == id }
+    fun getJobExperienceById(id: Long): JobExperience {
+        return allJobExperiences.first { it.id == id }
+    }
 
 }

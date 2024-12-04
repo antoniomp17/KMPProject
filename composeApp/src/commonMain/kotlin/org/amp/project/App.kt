@@ -113,7 +113,7 @@ fun App() {
                                 }
                             }
                         },
-                        scrollBehavior = scrollBehavior // Asociar el comportamiento de scroll al TopAppBar
+                        scrollBehavior = scrollBehavior
                     )
                 }
             ) { paddingValues ->

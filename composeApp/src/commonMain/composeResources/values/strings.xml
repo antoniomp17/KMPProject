@@ -6,4 +6,8 @@
     <string name="certifications">Certifications</string>
     <string name="amp_logo">AMP Logo</string>
     <string name="image_loaded">Image Loaded</string>
+    <string name="position">Position</string>
+    <string name="company">Company</string>
+    <string name="client">Client</string>
+    <string name="duration">Duration</string>
 </resources>

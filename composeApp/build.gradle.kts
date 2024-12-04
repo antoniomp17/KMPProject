@@ -60,6 +60,9 @@ kotlin {
 
             //landscapist-glide
             implementation(libs.landscapist.coil3)
+
+            //compose rich editor
+            implementation(libs.richeditor.compose)
         }
     }
 }

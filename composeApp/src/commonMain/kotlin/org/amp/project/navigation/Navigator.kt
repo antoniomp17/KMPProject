@@ -13,6 +13,7 @@ import org.amp.project.data.ResumeItemManager
 import org.amp.project.data.ResumeItemRepositoryImpl
 import org.amp.project.presentation.JobExperienceViewModel
 import org.amp.project.presentation.ResumeItemViewModel
+import org.amp.project.ui.DetailJobExperienceItem
 import org.amp.project.ui.ResumeScreen
 
 @Composable
@@ -45,7 +46,10 @@ fun Navigation(navigator: Navigator) {
         }
 
         scene(route = "/jobExperience/{id}"){ backStackEntry ->
-            val idFromPath = backStackEntry.path<Long>("id")
+            val idFromPath = backStackEntry.path<Long>("id")!!
+            val jobExperience = jobExperienceViewModel.getJobExperienceById(idFromPath)
+
+            DetailJobExperienceItem(jobExperience = jobExperience)
         }
 
         scene(route = "/resumeItem/{id}"){
