@@ -52,7 +52,7 @@ fun App() {
             val topBarType = getTopBarType(navigator)
 
             // Crear el scrollBehavior para el TopAppBar
-            val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+            val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 
             Scaffold(
                 modifier = Modifier
@@ -136,8 +136,8 @@ fun getTopBarType(navigator: Navigator): TopBarTypes {
 
     val currentNavigatorEntry = navigator.currentEntry.collectAsState(null).value
 
-    val isOnDetailedInfo = currentNavigatorEntry?.route?.equals("/jobExperience/{id}") == true
-            || currentNavigatorEntry?.route?.equals("/resumeItem/{id}") == true
+    val isOnDetailedInfo = currentNavigatorEntry?.route?.route.equals("/jobExperience/{id}") ||
+            currentNavigatorEntry?.route?.route.equals("/resumeItem/{id}")
 
     if(isOnDetailedInfo){
         topBarType = TopBarTypes.DETAILED_INFO

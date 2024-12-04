@@ -75,12 +75,14 @@ fun DetailJobExperienceItem(
                 letterSpacing = 0.5.sp
             )
 
-            Text(
-                text = "${stringResource(Res.string.client)}: ${jobExperience.clientName}",
-                style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
-                letterSpacing = 0.5.sp
-            )
+            if(jobExperience.clientName.isNotEmpty()){
+                Text(
+                    text = "${stringResource(Res.string.client)}: ${jobExperience.clientName}",
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 0.5.sp
+                )
+            }
         }
 
         Text(
@@ -106,9 +108,6 @@ fun DetailJobExperienceItem(
                 .clip(RoundedCornerShape(percent = 10))
                 .fillMaxWidth()
                 .aspectRatio(2f),
-            imageOptions = ImageOptions(
-                contentScale = ContentScale.Fit
-            ),
             imageModel = {  jobExperience.image },
             loading = {
                 Box(modifier = Modifier. matchParentSize()) {
