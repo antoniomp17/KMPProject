@@ -17,7 +17,7 @@ object ResumeItemManager {
             location = "",
             startDate = "2023",
             endDate= "Current",
-            description = "",
+            link = "https://play.google.com/store/apps/details?id=com.ja.driveguard",
             type = ResumeItemType.PROJECT
         ),
         ResumeItem(
@@ -29,7 +29,7 @@ object ResumeItemManager {
             location = "Madrid, Spain",
             startDate = "2016",
             endDate= "2022",
-            description = "",
+            link = "https://www.uc3m.es/grado/telematica",
             type = ResumeItemType.EDUCATION
         ),
         ResumeItem(
@@ -41,7 +41,7 @@ object ResumeItemManager {
             location = "",
             startDate = "2024",
             endDate= "2024",
-            description = "",
+            link = "https://www.udemy.com/certificate/UC-a814d1aa-99e2-4425-9778-ddc09199a241/",
             type = ResumeItemType.CERTIFICATE
         ),
         ResumeItem(
@@ -53,7 +53,7 @@ object ResumeItemManager {
             location = "",
             startDate = "2024",
             endDate= "2024",
-            description = "",
+            link = "https://www.udemy.com/certificate/UC-dc6aaa2f-8b5e-4d03-b2cb-dfc64f063dac/",
             type = ResumeItemType.CERTIFICATE
         )
     )

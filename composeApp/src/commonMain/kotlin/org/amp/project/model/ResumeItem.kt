@@ -9,7 +9,7 @@ data class ResumeItem(
     val location: String,
     val startDate: String,
     val endDate: String,
-    val description: String,
+    val link: String,
     val type: ResumeItemType
 )
 
