@@ -32,7 +32,10 @@ import org.amp.project.ui.utils.CoilImageComposable
 
 
 @Composable
-fun NavigationDrawerContent(drawerState: DrawerState) {
+fun NavigationDrawerContent(
+    drawerState: DrawerState,
+    onContactClick: () -> Unit,
+) {
     ModalDrawerSheet(drawerState) {
         Column(modifier = Modifier.padding(16.dp)){
             Spacer(Modifier.height(16.dp))
@@ -62,7 +65,7 @@ fun NavigationDrawerContent(drawerState: DrawerState) {
                             .padding(16.dp)
                     )
                 },
-                onClick = {},
+                onClick = {onContactClick()},
                 selected = false
             )
 

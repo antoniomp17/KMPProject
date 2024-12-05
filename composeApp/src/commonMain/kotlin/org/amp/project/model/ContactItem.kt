@@ -11,7 +11,9 @@ import org.jetbrains.compose.resources.DrawableResource
 data class ContactItem(
     val id: Long = -1,
     val type: ContactItemType,
-    val data: String
+    val title: String,
+    val data: String? = null,
+    val url: String? = null
 )
 
 enum class ContactItemType(val iconVector: ImageVector? = null, val iconRes: DrawableResource? = null) {

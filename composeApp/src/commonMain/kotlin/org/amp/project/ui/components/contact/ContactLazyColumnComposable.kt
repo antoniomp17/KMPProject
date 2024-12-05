@@ -8,23 +8,21 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.amp.project.model.ResumeItem
-import org.amp.project.ui.components.otherResume.ResumeItemComposable
+import org.amp.project.model.ContactItem
 
 @Composable
-fun ResumeItemsLazyColumnComposable(
-    resumeItemList: List<ResumeItem>,
-    onResumeItemClick: (resumeItem: ResumeItem) -> Unit
+fun ContactLazyColumnComposable(
+    contactItemList: List<ContactItem>
 ) {
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(8.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(2.8f/resumeItemList.size),
+            .aspectRatio(2.8f/contactItemList.size),
         userScrollEnabled = false
     ){
-        items(resumeItemList) {
-            ResumeItemComposable(resumeItem = it, onResumeItemClick)
+        items(contactItemList) {
+            ContactComposable(contactItem = it)
         }
     }
 }

@@ -11,17 +11,20 @@ object ContactManager {
         ContactItem(
             id = currentId++,
             type = ContactItemType.MAIL,
+            title = "Email",
             data = "antoniomoraleda17@gmail.com"
         ),
         ContactItem(
             id = currentId++,
             type = ContactItemType.PHONE,
+            title = "Phone",
             data = "+34 667 868 919"
         ),
         ContactItem(
             id = currentId++,
             type = ContactItemType.LINKEDIN,
-            data = "https://www.linkedin.com/in/amoraleda17/"
+            title = "LinkedIn",
+            url = "https://www.linkedin.com/in/amoraleda17/"
         )
     )
 }

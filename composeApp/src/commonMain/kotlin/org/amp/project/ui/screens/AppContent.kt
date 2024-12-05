@@ -29,10 +29,9 @@ import moe.tlaster.precompose.navigation.rememberNavigator
 import org.amp.project.data.Links
 import org.amp.project.data.TopBarTypes
 import org.amp.project.navigation.Navigation
-import org.amp.project.ui.utils.GetTopBarType
-import org.amp.project.ui.components.topBar.AppTopBar
 import org.amp.project.ui.components.navigationDrawer.NavigationDrawerContent
 import org.amp.project.ui.utils.CoilImageComposable
+import org.amp.project.ui.utils.GetTopBarType
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -47,7 +46,11 @@ fun AppContent() {
 
     ModalNavigationDrawer(
         drawerState = drawerState,
-        drawerContent = { NavigationDrawerContent(drawerState) }
+        drawerContent = {
+            NavigationDrawerContent(drawerState){
+                navigator.navigate("/contact")
+            }
+        }
     ) {
         Scaffold(
             modifier = Modifier
@@ -80,7 +83,7 @@ fun AppContent() {
                                         imageUrl = Links.AMP_IMAGE_LINK)
                                 }
                             }
-                            TopBarTypes.DETAILED_INFO -> {
+                            else -> {
                                 IconButton(
                                     modifier = Modifier.padding(start = 16.dp),
                                     onClick = { navigator.popBackStack() }

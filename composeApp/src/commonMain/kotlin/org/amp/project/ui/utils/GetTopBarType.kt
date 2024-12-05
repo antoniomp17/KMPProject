@@ -15,7 +15,7 @@ fun GetTopBarType(navigator: Navigator): TopBarTypes {
             currentNavigatorEntry?.route?.route.equals("/resumeItem/{id}")
 
     if (isOnDetailedInfo) {
-        topBarType = TopBarTypes.DETAILED_INFO
+        topBarType = TopBarTypes.NOT_HOME
     }
 
     return topBarType

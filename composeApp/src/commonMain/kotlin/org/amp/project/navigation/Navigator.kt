@@ -7,12 +7,16 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.viewmodel.viewModel
+import org.amp.project.data.contact.ContactManager
+import org.amp.project.data.contact.ContactRepositoryImpl
 import org.amp.project.data.jobExperience.JobExperienceManager
 import org.amp.project.data.jobExperience.JobExperienceRepositoryImpl
 import org.amp.project.data.otherResume.OtherResumeItemManager
 import org.amp.project.data.otherResume.OtherOtherResumeItemRepositoryImpl
+import org.amp.project.presentation.ContactViewModel
 import org.amp.project.presentation.JobExperienceViewModel
 import org.amp.project.presentation.ResumeItemViewModel
+import org.amp.project.ui.screens.ContactScreen
 import org.amp.project.ui.screens.DetailJobExperienceScreen
 import org.amp.project.ui.screens.ResumeScreen
 
@@ -24,6 +28,9 @@ fun Navigation(navigator: Navigator) {
     }
     val resumeItemViewModel = viewModel(modelClass = ResumeItemViewModel::class) {
         ResumeItemViewModel(repo = OtherOtherResumeItemRepositoryImpl(OtherResumeItemManager))
+    }
+    val contactViewModel = viewModel(modelClass = ContactViewModel::class) {
+        ContactViewModel(repo = ContactRepositoryImpl(ContactManager))
     }
 
     NavHost(
@@ -53,7 +60,8 @@ fun Navigation(navigator: Navigator) {
         }
 
         scene(route = "/contact"){
-
+            val contactUiState by contactViewModel.uiState.collectAsStateWithLifecycle()
+            ContactScreen(contactUiState = contactUiState)
         }
     }
 }
