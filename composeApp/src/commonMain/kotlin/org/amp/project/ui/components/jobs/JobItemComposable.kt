@@ -19,8 +19,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.skydoves.landscapist.coil3.CoilImage
 import org.amp.project.model.JobExperience
-import org.amp.project.ui.theme.FailureLoadingImage
+import org.amp.project.ui.utils.FailureLoadingImage
 import org.amp.project.ui.theme.primaryLight
+import org.amp.project.ui.utils.CoilImageComposable
 
 @Composable
 fun JobItemComposable(jobExperience: JobExperience, onJobExperienceClick: (jobExperience: JobExperience) -> Unit){
@@ -31,23 +32,12 @@ fun JobItemComposable(jobExperience: JobExperience, onJobExperienceClick: (jobEx
         .aspectRatio(1.2f)
         .clickable { onJobExperienceClick(jobExperience) }
     ){
-        CoilImage(
+        CoilImageComposable(
             modifier = Modifier
                 .clip(RoundedCornerShape(percent = 10))
                 .fillMaxWidth()
                 .weight(1f),
-            imageModel = {  jobExperience.image },
-            loading = {
-                Box(modifier = Modifier. matchParentSize()) {
-                    CircularProgressIndicator(
-                        modifier = Modifier.align(Alignment.Center)
-                    )
-                }
-            },
-            failure = {
-                FailureLoadingImage()
-            }
-        )
+            imageUrl = jobExperience.image)
 
         Text(
             text = jobExperience.companyName,

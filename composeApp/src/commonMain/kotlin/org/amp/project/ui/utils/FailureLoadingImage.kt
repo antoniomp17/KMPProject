@@ -1,12 +1,30 @@
 package org.amp.project.ui.utils
 
-import androidx.compose.material3.Text
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import composeResources.Res
-import composeResources.image_failed_to_load
-import org.jetbrains.compose.resources.stringResource
+import composeResources.android
+import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun FailureLoadingImage() {
-    Text(text = stringResource(Res.string.image_failed_to_load))
+fun FailureLoadingImage(){
+    Box(
+        modifier = Modifier
+            .fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(Res.drawable.android),
+                contentDescription = "Error al cargar imagen",
+                contentScale = ContentScale.Fit
+            )
+        }
+    }
 }

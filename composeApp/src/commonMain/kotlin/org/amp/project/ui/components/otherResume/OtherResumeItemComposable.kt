@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -26,8 +27,9 @@ import androidx.compose.ui.unit.sp
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
 import org.amp.project.model.ResumeItem
-import org.amp.project.ui.theme.FailureLoadingImage
+import org.amp.project.ui.utils.FailureLoadingImage
 import org.amp.project.ui.theme.primaryLight
+import org.amp.project.ui.utils.CoilImageComposable
 
 @Composable
 fun ResumeItemComposable(
@@ -50,26 +52,12 @@ fun ResumeItemComposable(
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.CenterVertically
         ){
-            CoilImage(
+            CoilImageComposable(
                 modifier = Modifier
                     .weight(1f)
                     .padding(16.dp)
                     .clip(CircleShape),
-                imageModel = { resumeItem.itemImageUrl },
-                imageOptions = ImageOptions(
-                    contentScale = ContentScale.Crop
-                ),
-                loading = {
-                    Box(modifier = Modifier.matchParentSize()) {
-                        CircularProgressIndicator(
-                            modifier = Modifier.align(Alignment.Center)
-                        )
-                    }
-                },
-                failure = {
-                    FailureLoadingImage()
-                }
-            )
+                imageUrl = resumeItem.itemImageUrl)
 
             Column(
                 modifier = Modifier.weight(2f),

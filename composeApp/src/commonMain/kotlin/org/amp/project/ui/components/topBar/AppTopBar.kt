@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -30,7 +31,8 @@ import kotlinx.coroutines.launch
 import moe.tlaster.precompose.navigation.Navigator
 import org.amp.project.data.Links
 import org.amp.project.data.TopBarTypes
-import org.amp.project.ui.theme.FailureLoadingImage
+import org.amp.project.ui.utils.CoilImageComposable
+import org.amp.project.ui.utils.FailureLoadingImage
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -42,66 +44,5 @@ fun AppTopBar(
     scope: CoroutineScope,
     navigator: Navigator
 ) {
-    CenterAlignedTopAppBar(
-        title = {
-            Image(
-                painter = painterResource(Res.drawable.amp_logo),
-                contentDescription = stringResource(Res.string.amp_logo)
-            )
-        },
-        navigationIcon = {
-            when (topBarType) {
-                TopBarTypes.HOME -> {
-                    IconButton(
-                        modifier = Modifier.padding(start = 16.dp),
-                        onClick = {
-                            scope.launch {
-                                drawerState.apply {
-                                    if (isClosed) open() else close()
-                                }
-                            }
-                        }
-                    ) {
-                        CoilImage(
-                            modifier = Modifier
-                                .clip(CircleShape),
-                            imageModel = { Links.AMP_IMAGE_LINK },
-                            imageOptions = ImageOptions(
-                                contentScale = ContentScale.Crop
-                            ),
-                            loading = {
-                                Box(modifier = Modifier.matchParentSize()) {
-                                    CircularProgressIndicator(
-                                        modifier = Modifier.align(Alignment.Center)
-                                    )
-                                }
-                            },
-                            success = { _, painter ->
-                                Image(
-                                    painter = painter,
-                                    contentDescription = stringResource(Res.string.image_loaded),
-                                    modifier = Modifier.fillMaxWidth()
-                                )
-                            },
-                            failure = {
-                                FailureLoadingImage()
-                            }
-                        )
-                    }
-                }
-                TopBarTypes.DETAILED_INFO -> {
-                    IconButton(
-                        modifier = Modifier.padding(start = 16.dp),
-                        onClick = { navigator.popBackStack() }
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Default.ArrowBack,
-                            contentDescription = Icons.AutoMirrored.Default.ArrowBack.name
-                        )
-                    }
-                }
-            }
-        },
-        scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
-    )
+
 }
