@@ -1,13 +1,13 @@
-package org.amp.project.data
+package org.amp.project.data.jobExperience
 
-import org.amp.project.model.JobExperience
+import org.amp.project.model.JobExperienceItem
 
 object JobExperienceManager {
 
     private var currentId = 1L
 
     val fakeJobExperienceList = mutableListOf(
-        JobExperience(
+        JobExperienceItem(
             id = currentId++,
             position = "Android Developer",
             companyName = "Akkodis",
@@ -35,7 +35,7 @@ object JobExperienceManager {
                     "\n" +
                     "You can explore the **Banco Mediolanum app** on the [Google Play Store here](https://play.google.com/store/apps/details?id=com.mediolanum)."
         ),
-        JobExperience(
+        JobExperienceItem(
             id = currentId++,
             position = "Android Developer",
             companyName = "Panel Sistemas",
@@ -60,7 +60,7 @@ object JobExperienceManager {
                     "\n" +
                     "You can learn more about the **SpotMusic app** [here](https://www.telefonicaempresas.es/soluciones-digitales/spotmusic)."
         ),
-        JobExperience(
+        JobExperienceItem(
             id = currentId++,
             position = "Android Developer",
             companyName = "Cloud On Mobile",
@@ -84,7 +84,7 @@ object JobExperienceManager {
                     "\n" +
                     "This role allowed me to deepen my expertise in agile development environments and mobile application optimization for large user bases. Working with Grupo SM provided valuable insights into creating impactful solutions for the educational industry while maintaining a strong commitment to quality and timely delivery."
         ),
-        JobExperience(
+        JobExperienceItem(
             id = currentId++,
             position = "Android Developer",
             companyName = "Arquimea",
@@ -108,7 +108,7 @@ object JobExperienceManager {
                     "\n" +
                     "This experience was instrumental in strengthening my skills in full-cycle application development, particularly in the context of specialized and high-demand use cases. It provided invaluable exposure to working with custom architectures and device integrations while maintaining the highest standards of performance and reliability."
         ),
-        JobExperience(
+        JobExperienceItem(
             id = currentId++,
             position = "Android Developer",
             companyName = "IMDEA Networks",

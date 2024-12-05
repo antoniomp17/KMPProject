@@ -9,7 +9,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.amp.project.model.JobExperience
+import org.amp.project.model.JobExperienceItem
 import org.amp.project.model.ResumeItem
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.ResumeItemUiState
@@ -19,7 +19,7 @@ import org.amp.project.ui.components.otherResume.ResumeItemsComposable
 @Composable
 fun ResumeScreen(jobExperienceUiState: JobExperienceUiState,
                  resumeItemUiState: ResumeItemUiState,
-                 onJobExperienceClick: (jobExperience: JobExperience) -> Unit,
+                 onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit,
                  onResumeItemClick: (resumeItem: ResumeItem) -> Unit
 ) {
     Column(

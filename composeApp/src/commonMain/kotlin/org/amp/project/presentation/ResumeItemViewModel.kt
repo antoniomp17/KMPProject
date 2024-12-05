@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import moe.tlaster.precompose.viewmodel.ViewModel
 import moe.tlaster.precompose.viewmodel.viewModelScope
-import org.amp.project.domain.ResumeItemRepository
+import org.amp.project.domain.OtherResumeItemRepository
 import org.amp.project.model.ResumeItem
 import org.amp.project.model.ResumeItemType
 
@@ -17,7 +17,7 @@ data class ResumeItemUiState(
     val certificateResumeItems: List<ResumeItem> = emptyList()
 )
 
-class ResumeItemViewModel(private val repo: ResumeItemRepository): ViewModel(){
+class ResumeItemViewModel(private val repo: OtherResumeItemRepository): ViewModel(){
 
     private val _uiState = MutableStateFlow(ResumeItemUiState())
     val uiState = _uiState.asStateFlow()

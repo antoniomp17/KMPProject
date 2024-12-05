@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.unit.dp
 import com.mohamedrejeb.richeditor.model.rememberRichTextState
-import org.amp.project.model.JobExperience
+import org.amp.project.model.JobExperienceItem
 import org.amp.project.ui.components.jobDetail.JobDescription
 import org.amp.project.ui.components.jobDetail.JobDetailsRow
 import org.amp.project.ui.components.jobDetail.JobDuration
@@ -25,7 +25,7 @@ import org.amp.project.ui.utils.CoilImageComposable
 
 @Composable
 fun DetailJobExperienceScreen(
-    jobExperience: JobExperience
+    jobExperience: JobExperienceItem
 ) {
     val richTextState = rememberRichTextState()
     richTextState.setMarkdown(jobExperience.description)
@@ -53,6 +53,5 @@ fun DetailJobExperienceScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
         JobDescription(richTextState)
-
     }
 }

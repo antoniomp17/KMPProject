@@ -43,7 +43,7 @@ fun ResumeItemComposable(
             .aspectRatio(3f)
             .padding(2.dp)
             .clickable{onResumeItemClick(resumeItem)},
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        border = CardDefaults.outlinedCardBorder(),
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)){
 
         Row(

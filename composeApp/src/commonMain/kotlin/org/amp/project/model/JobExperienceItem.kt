@@ -1,6 +1,6 @@
 package org.amp.project.model
 
-data class JobExperience(
+data class JobExperienceItem(
     val id: Long = -1,
     val position: String,
     val companyName: String,

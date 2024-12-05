@@ -7,8 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import org.amp.project.data.JobExperienceManager
-import org.amp.project.data.ResumeItemManager
+import org.amp.project.data.jobExperience.JobExperienceManager
+import org.amp.project.data.otherResume.OtherResumeItemManager
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.ui.screens.ResumeScreen
@@ -24,7 +24,7 @@ fun ResumeScreenPreview() {
                     jobExperiences = JobExperienceManager.fakeJobExperienceList
                 ),
                 resumeItemUiState = ResumeItemUiState(
-                    projectResumeItems = ResumeItemManager.fakeResumeItemList
+                    projectResumeItems = OtherResumeItemManager.fakeResumeItemList
                 ),
                 onJobExperienceClick = {},
                 onResumeItemClick = {}

@@ -7,10 +7,10 @@ import kotlinx.coroutines.launch
 import moe.tlaster.precompose.viewmodel.ViewModel
 import moe.tlaster.precompose.viewmodel.viewModelScope
 import org.amp.project.domain.JobExperienceRepository
-import org.amp.project.model.JobExperience
+import org.amp.project.model.JobExperienceItem
 
 data class JobExperienceUiState(
-    val jobExperiences: List<JobExperience> = emptyList()
+    val jobExperiences: List<JobExperienceItem> = emptyList()
 )
 
 class JobExperienceViewModel(private val repo: JobExperienceRepository): ViewModel(){
@@ -35,7 +35,7 @@ class JobExperienceViewModel(private val repo: JobExperienceRepository): ViewMod
         }
     }
 
-    fun getJobExperienceById(id: Long): JobExperience {
+    fun getJobExperienceById(id: Long): JobExperienceItem {
         return allJobExperiences.first { it.id == id }
     }
 

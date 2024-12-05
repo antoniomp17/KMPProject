@@ -11,14 +11,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import composeResources.Res
 import composeResources.experience
-import org.amp.project.model.JobExperience
+import org.amp.project.model.JobExperienceItem
 import org.amp.project.ui.theme.onBackgroundLight
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun JobsComposable(
-    jobExperienceList: List<JobExperience>,
-    onJobExperienceClick: (jobExperience: JobExperience) -> Unit
+    jobExperienceList: List<JobExperienceItem>,
+    onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit
 ) {
     Column(
         verticalArrangement = Arrangement.SpaceBetween

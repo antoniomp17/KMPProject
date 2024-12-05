@@ -1,9 +1,9 @@
-package org.amp.project.data
+package org.amp.project.data.otherResume
 
 import org.amp.project.model.ResumeItem
 import org.amp.project.model.ResumeItemType
 
-object ResumeItemManager {
+object OtherResumeItemManager {
 
     private var currentId = 1L
 

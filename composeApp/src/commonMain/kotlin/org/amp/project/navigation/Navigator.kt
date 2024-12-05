@@ -7,10 +7,10 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.viewmodel.viewModel
-import org.amp.project.data.JobExperienceManager
-import org.amp.project.data.JobExperienceRepositoryImpl
-import org.amp.project.data.ResumeItemManager
-import org.amp.project.data.ResumeItemRepositoryImpl
+import org.amp.project.data.jobExperience.JobExperienceManager
+import org.amp.project.data.jobExperience.JobExperienceRepositoryImpl
+import org.amp.project.data.otherResume.OtherResumeItemManager
+import org.amp.project.data.otherResume.OtherOtherResumeItemRepositoryImpl
 import org.amp.project.presentation.JobExperienceViewModel
 import org.amp.project.presentation.ResumeItemViewModel
 import org.amp.project.ui.screens.DetailJobExperienceScreen
@@ -23,7 +23,7 @@ fun Navigation(navigator: Navigator) {
         JobExperienceViewModel(repo = JobExperienceRepositoryImpl(JobExperienceManager))
     }
     val resumeItemViewModel = viewModel(modelClass = ResumeItemViewModel::class) {
-        ResumeItemViewModel(repo = ResumeItemRepositoryImpl(ResumeItemManager))
+        ResumeItemViewModel(repo = OtherOtherResumeItemRepositoryImpl(OtherResumeItemManager))
     }
 
     NavHost(
@@ -52,10 +52,8 @@ fun Navigation(navigator: Navigator) {
             DetailJobExperienceScreen(jobExperience = jobExperience)
         }
 
-        scene(route = "/resumeItem/{id}"){
+        scene(route = "/contact"){
 
         }
-
     }
-
 }
