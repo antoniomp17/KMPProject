@@ -1,4 +1,4 @@
-package org.amp.project.ui
+package org.amp.project.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -20,14 +20,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.mohamedrejeb.richeditor.model.rememberRichTextState
 import com.mohamedrejeb.richeditor.ui.material3.RichText
-import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
 import composeResources.Res
 import composeResources.client
@@ -36,7 +34,6 @@ import composeResources.duration
 import composeResources.position
 import org.amp.project.model.JobExperience
 import org.amp.project.ui.theme.FailureLoadingImage
-import org.amp.project.ui.theme.primaryLight
 import org.jetbrains.compose.resources.stringResource
 
 @Composable

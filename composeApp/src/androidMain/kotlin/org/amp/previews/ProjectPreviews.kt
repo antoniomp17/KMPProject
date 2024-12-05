@@ -11,7 +11,7 @@ import org.amp.project.data.JobExperienceManager
 import org.amp.project.data.ResumeItemManager
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.ResumeItemUiState
-import org.amp.project.ui.ResumeScreen
+import org.amp.project.ui.screens.ResumeScreen
 import org.amp.project.ui.theme.AppTheme
 
 @Preview(showBackground = true)

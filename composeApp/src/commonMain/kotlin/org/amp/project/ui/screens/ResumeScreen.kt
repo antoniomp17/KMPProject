@@ -1,4 +1,4 @@
-package org.amp.project.ui
+package org.amp.project.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -13,6 +13,8 @@ import org.amp.project.model.JobExperience
 import org.amp.project.model.ResumeItem
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.ResumeItemUiState
+import org.amp.project.ui.components.jobs.JobsComposable
+import org.amp.project.ui.components.otherResume.ResumeItemsComposable
 
 @Composable
 fun ResumeScreen(jobExperienceUiState: JobExperienceUiState,
@@ -27,9 +29,9 @@ fun ResumeScreen(jobExperienceUiState: JobExperienceUiState,
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ){
-        JobExperienceComposable(jobExperienceList = jobExperienceUiState.jobExperiences, onJobExperienceClick = onJobExperienceClick)
-        ResumeComposable(resumeItemList = resumeItemUiState.projectResumeItems, onResumeItemClick = onResumeItemClick)
-        ResumeComposable(resumeItemList = resumeItemUiState.educationResumeItems, onResumeItemClick = onResumeItemClick)
-        ResumeComposable(resumeItemList = resumeItemUiState.certificateResumeItems, onResumeItemClick = onResumeItemClick)
+        JobsComposable(jobExperienceList = jobExperienceUiState.jobExperiences, onJobExperienceClick = onJobExperienceClick)
+        ResumeItemsComposable(resumeItemList = resumeItemUiState.projectResumeItems, onResumeItemClick = onResumeItemClick)
+        ResumeItemsComposable(resumeItemList = resumeItemUiState.educationResumeItems, onResumeItemClick = onResumeItemClick)
+        ResumeItemsComposable(resumeItemList = resumeItemUiState.certificateResumeItems, onResumeItemClick = onResumeItemClick)
     }
 }

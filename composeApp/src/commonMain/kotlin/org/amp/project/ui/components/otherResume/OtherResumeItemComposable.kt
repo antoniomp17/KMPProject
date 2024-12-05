@@ -1,20 +1,14 @@
-package org.amp.project.ui
+package org.amp.project.ui.components.otherResume
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -31,52 +25,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
-import composeResources.Res
-import composeResources.image_loaded
 import org.amp.project.model.ResumeItem
 import org.amp.project.ui.theme.FailureLoadingImage
-import org.amp.project.ui.theme.onBackgroundLight
 import org.amp.project.ui.theme.primaryLight
-import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun ResumeComposable(
-    resumeItemList: List<ResumeItem>,
-    onResumeItemClick: (resumeItem: ResumeItem) -> Unit
-) {
-    Column(
-        verticalArrangement = Arrangement.SpaceEvenly
-    ){
-        Text(
-            style = MaterialTheme.typography.titleMedium,
-            text = resumeItemList[0].type.title,
-            color = onBackgroundLight
-        )
-        Spacer(modifier = Modifier.height(4.dp))
-        ResumeLazyColumnComposable(resumeItemList, onResumeItemClick)
-    }
-}
-
-@Composable
-private fun ResumeLazyColumnComposable(
-    resumeItemList: List<ResumeItem>,
-    onResumeItemClick: (resumeItem: ResumeItem) -> Unit
-) {
-    LazyColumn(
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = Modifier
-            .fillMaxWidth()
-            .aspectRatio(2.8f/resumeItemList.size),
-        userScrollEnabled = false
-    ){
-        items(resumeItemList) {
-            ResumeItem(resumeItem = it, onResumeItemClick)
-        }
-    }
-}
-
-@Composable
-private fun ResumeItem(
+fun ResumeItemComposable(
     resumeItem: ResumeItem,
     onResumeItemClick: (resumeItem: ResumeItem) -> Unit
 ){
@@ -157,6 +111,5 @@ private fun ResumeItem(
                 )
             }
         }
-
     }
 }

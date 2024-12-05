@@ -10,4 +10,8 @@
     <string name="company">Company</string>
     <string name="client">Client</string>
     <string name="duration">Duration</string>
+    <string name="contact">Contact</string>
+    <string name="languages">Languages</string>
+    <string name="skills">Skills</string>
+    <string name="image_failed_to_load">Image Failed to Load</string>
 </resources>

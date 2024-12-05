@@ -47,6 +47,7 @@ kotlin {
         commonMain.dependencies {
             api(compose.foundation)
             api(compose.animation)
+            api(compose.materialIconsExtended)
             implementation(compose.runtime)
             implementation(compose.material3)
             implementation(compose.ui)

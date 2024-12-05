@@ -34,14 +34,14 @@ object ResumeItemManager {
         ),
         ResumeItem(
             id = currentId++,
-            itemName = "Jetpack Compose Course",
+            itemName = "Kotlin Multiplatform Course",
             itemImageUrl = "https://webautomation.io/static/images/domain_images/Udemy-Emblem_cWmEXOG.png",
             siteName = "Udemy",
             siteImageUrl = "",
             location = "",
             startDate = "2024",
             endDate= "2024",
-            link = "https://www.udemy.com/certificate/UC-a814d1aa-99e2-4425-9778-ddc09199a241/",
+            link = "https://www.udemy.com/certificate/UC-09eec4f6-8156-4823-9754-9bd1c35b3c62/",
             type = ResumeItemType.CERTIFICATE
         ),
         ResumeItem(
@@ -54,6 +54,18 @@ object ResumeItemManager {
             startDate = "2024",
             endDate= "2024",
             link = "https://www.udemy.com/certificate/UC-dc6aaa2f-8b5e-4d03-b2cb-dfc64f063dac/",
+            type = ResumeItemType.CERTIFICATE
+        ),
+        ResumeItem(
+            id = currentId++,
+            itemName = "Jetpack Compose Course",
+            itemImageUrl = "https://webautomation.io/static/images/domain_images/Udemy-Emblem_cWmEXOG.png",
+            siteName = "Udemy",
+            siteImageUrl = "",
+            location = "",
+            startDate = "2024",
+            endDate= "2024",
+            link = "https://www.udemy.com/certificate/UC-a814d1aa-99e2-4425-9778-ddc09199a241/",
             type = ResumeItemType.CERTIFICATE
         )
     )
