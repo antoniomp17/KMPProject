@@ -60,8 +60,7 @@ fun PhoneMailItemComposable(phoneMailItem: ContactItem){
                     text = phoneMailItem.title,
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp,
-                    color = primaryLight
+                    letterSpacing = 0.5.sp
                 )
                 if(phoneMailItem.data != null){
                     Text(

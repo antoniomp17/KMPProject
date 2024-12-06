@@ -78,6 +78,7 @@ android {
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
+        signingConfig = signingConfigs.getByName("debug")
     }
     packaging {
         resources {

@@ -56,8 +56,7 @@ fun LanguageItemComposable(languageItem: LanguageItem){
                     text = languageItem.language,
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp,
-                    color = primaryLight
+                    letterSpacing = 0.5.sp
                 )
                 Text(
                     text = languageItem.level.description,

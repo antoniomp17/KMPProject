@@ -38,8 +38,7 @@ fun JobItemComposable(jobExperience: JobExperienceItem, onJobExperienceClick: (j
             text = jobExperience.companyName,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.Bold,
-            letterSpacing = 0.5.sp,
-            color = primaryLight
+            letterSpacing = 0.5.sp
         )
 
         Text(

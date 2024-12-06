@@ -68,8 +68,7 @@ fun ResumeItemComposable(
                     text = resumeItem.itemName,
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp,
-                    color = primaryLight
+                    letterSpacing = 0.5.sp
                 )
                 Text(
                     text = resumeItem.siteName,

@@ -67,8 +67,7 @@ fun SkillLazyGridComposable(
                         style = MaterialTheme.typography.labelMedium,
                         fontWeight = FontWeight.Bold,
                         letterSpacing = 0.5.sp,
-                        textAlign = TextAlign.Center,
-                        color = primaryLight
+                        textAlign = TextAlign.Center
                     )
                     Text(
                         text = item.experience,

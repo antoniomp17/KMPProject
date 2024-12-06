@@ -25,8 +25,7 @@ fun JobsComposable(
     ){
         Text(
             style = MaterialTheme.typography.titleMedium,
-            text = stringResource(Res.string.experience),
-            color = onBackgroundLight
+            text = stringResource(Res.string.experience)
         )
         Spacer(modifier = Modifier.height(4.dp))
         JobsLazyRowComposable(

@@ -22,8 +22,7 @@ fun ResumeItemsComposable(
     ){
         Text(
             style = MaterialTheme.typography.titleMedium,
-            text = resumeItemList[0].type.title,
-            color = onBackgroundLight
+            text = resumeItemList[0].type.title
         )
         Spacer(modifier = Modifier.height(4.dp))
         ResumeItemsLazyColumnComposable(resumeItemList, onResumeItemClick)
