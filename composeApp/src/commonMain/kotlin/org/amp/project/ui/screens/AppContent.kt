@@ -26,8 +26,8 @@ import composeResources.Res
 import composeResources.amp_logo
 import kotlinx.coroutines.launch
 import moe.tlaster.precompose.navigation.rememberNavigator
-import org.amp.project.data.Links
-import org.amp.project.data.TopBarTypes
+import org.amp.project.data.utils.Links
+import org.amp.project.data.utils.TopBarTypes
 import org.amp.project.navigation.Navigation
 import org.amp.project.ui.components.navigationDrawer.NavigationDrawerContent
 import org.amp.project.ui.utils.CoilImageComposable
@@ -47,7 +47,9 @@ fun AppContent() {
     ModalNavigationDrawer(
         drawerState = drawerState,
         drawerContent = {
-            NavigationDrawerContent(drawerState){
+            NavigationDrawerContent(
+                drawerState = drawerState
+            ){
                 navigator.navigate("/contact")
             }
         }

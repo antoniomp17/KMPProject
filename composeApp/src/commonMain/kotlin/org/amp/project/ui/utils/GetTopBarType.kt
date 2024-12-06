@@ -3,7 +3,7 @@ package org.amp.project.ui.utils
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import moe.tlaster.precompose.navigation.Navigator
-import org.amp.project.data.TopBarTypes
+import org.amp.project.data.utils.TopBarTypes
 
 @Composable
 fun GetTopBarType(navigator: Navigator): TopBarTypes {

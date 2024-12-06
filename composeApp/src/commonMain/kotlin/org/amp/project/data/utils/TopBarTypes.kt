@@ -1,4 +1,4 @@
-package org.amp.project.data
+package org.amp.project.data.utils
 
 enum class TopBarTypes {
     HOME,
