@@ -37,6 +37,7 @@ import org.jetbrains.compose.resources.stringResource
 fun NavigationDrawerContent(
     drawerState: DrawerState,
     onContactClick: () -> Unit,
+    onLanguageClick: () -> Unit,
 ) {
 
     val scope = rememberCoroutineScope()
@@ -89,7 +90,12 @@ fun NavigationDrawerContent(
                             .padding(16.dp)
                     )
                 },
-                onClick = {},
+                onClick = {
+                    onLanguageClick()
+                    scope.launch {
+                        drawerState.close() // Cierra el drawer
+                    }
+                },
                 selected = false
             )
 

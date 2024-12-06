@@ -1,22 +1,18 @@
 package org.amp.project.ui.components.contact
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalUriHandler
 import org.amp.project.model.ContactItem
 import org.amp.project.ui.utils.getIconForType
 
 @Composable
-fun SocialLazyColumnComposable(
+fun SocialLazyGridComposable(
     socialItemList: List<ContactItem>
 ) {
 

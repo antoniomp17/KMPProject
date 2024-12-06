@@ -3,6 +3,7 @@ package org.amp.project.model
 data class LanguageItem(
     val id: Long = -1,
     val language: String,
+    val flag: String,
     val level: LanguageLevel
 )
 

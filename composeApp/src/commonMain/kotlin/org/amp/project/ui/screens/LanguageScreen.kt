@@ -12,14 +12,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import composeResources.Res
-import composeResources.contact
-import org.amp.project.presentation.ContactUiState
-import org.amp.project.ui.components.contact.PhoneMailLazyColumnComposable
-import org.amp.project.ui.components.contact.SocialLazyGridComposable
+import composeResources.languages
+import org.amp.project.presentation.LanguageUiState
+import org.amp.project.ui.components.language.LanguageLazyColumnComposable
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun ContactScreen(contactUiState: ContactUiState){
+fun LanguageScreen(languageUiState: LanguageUiState){
 
     Column(
         modifier = Modifier
@@ -28,13 +27,12 @@ fun ContactScreen(contactUiState: ContactUiState){
         verticalArrangement = Arrangement.spacedBy(32.dp)
     ) {
         Text(
-            text = stringResource(Res.string.contact),
+            text = stringResource(Res.string.languages),
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             letterSpacing = 0.5.sp
         )
 
-        PhoneMailLazyColumnComposable(phoneMailItemList = contactUiState.phoneMails)
-        SocialLazyGridComposable(socialItemList = contactUiState.socials)
+        LanguageLazyColumnComposable(languageItemList = languageUiState.languages)
     }
 }

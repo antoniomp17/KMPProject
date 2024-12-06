@@ -48,10 +48,14 @@ fun AppContent() {
         drawerState = drawerState,
         drawerContent = {
             NavigationDrawerContent(
-                drawerState = drawerState
-            ){
-                navigator.navigate("/contact")
-            }
+                drawerState = drawerState,
+                onLanguageClick = {
+                    navigator.navigate("/languages")
+                },
+                onContactClick = {
+                    navigator.navigate("/contact")
+                }
+            )
         }
     ) {
         Scaffold(
