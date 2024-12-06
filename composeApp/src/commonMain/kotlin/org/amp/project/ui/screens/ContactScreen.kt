@@ -16,7 +16,8 @@ import androidx.compose.ui.unit.sp
 import composeResources.Res
 import composeResources.contact
 import org.amp.project.presentation.ContactUiState
-import org.amp.project.ui.components.contact.ContactLazyColumnComposable
+import org.amp.project.ui.components.contact.PhoneMailLazyColumnComposable
+import org.amp.project.ui.components.contact.SocialLazyColumnComposable
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -25,17 +26,17 @@ fun ContactScreen(contactUiState: ContactUiState){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp)
-            .verticalScroll(rememberScrollState()),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+            .padding(start = 16.dp, end = 16.dp, top = 64.dp),
+        verticalArrangement = Arrangement.spacedBy(32.dp)
     ) {
         Text(
             text = stringResource(Res.string.contact),
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             letterSpacing = 0.5.sp
         )
 
-        ContactLazyColumnComposable(contactItemList = contactUiState.contacts)
+        PhoneMailLazyColumnComposable(phoneMailItemList = contactUiState.phoneMails)
+        SocialLazyColumnComposable(socialItemList = contactUiState.socials)
     }
 }

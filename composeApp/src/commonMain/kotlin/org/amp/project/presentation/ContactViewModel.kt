@@ -8,9 +8,11 @@ import moe.tlaster.precompose.viewmodel.ViewModel
 import moe.tlaster.precompose.viewmodel.viewModelScope
 import org.amp.project.domain.ContactRepository
 import org.amp.project.model.ContactItem
+import org.amp.project.model.ContactItemType
 
 data class ContactUiState(
-    val contacts: List<ContactItem> = emptyList()
+    val phoneMails: List<ContactItem> = emptyList(),
+    val socials: List<ContactItem> = emptyList()
 )
 
 class ContactViewModel(private val repo: ContactRepository): ViewModel(){
@@ -31,8 +33,21 @@ class ContactViewModel(private val repo: ContactRepository): ViewModel(){
 
     private fun updateState() {
         _uiState.update { state ->
-            state.copy(contacts = allJobExperiences)
+            state.copy(
+                phoneMails = getPhoneEmail(),
+                socials = getSocial()
+            )
         }
+    }
+
+    private fun getPhoneEmail(): List<ContactItem> {
+        return allJobExperiences.filter { it.type == ContactItemType.PHONE ||
+                it.type == ContactItemType.MAIL }
+    }
+
+    private fun getSocial(): List<ContactItem> {
+        return allJobExperiences.filter { it.type != ContactItemType.PHONE &&
+                it.type != ContactItemType.MAIL }
     }
 
 }

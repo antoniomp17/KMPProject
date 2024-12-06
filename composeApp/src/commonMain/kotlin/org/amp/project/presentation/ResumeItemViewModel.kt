@@ -37,22 +37,22 @@ class ResumeItemViewModel(private val repo: OtherResumeItemRepository): ViewMode
         _uiState.update { state ->
             state.copy(
                 allResumeItems = allResumeItems,
-                projectResumeItems = getResumeItemProject(),
-                educationResumeItems = getResumeItemEducation(),
-                certificateResumeItems = getResumeItemCertificate()
+                projectResumeItems = getResumeItemsProject(),
+                educationResumeItems = getResumeItemsEducation(),
+                certificateResumeItems = getResumeItemsCertificate()
             )
         }
     }
 
-    private fun getResumeItemProject(): List<ResumeItem> {
+    private fun getResumeItemsProject(): List<ResumeItem> {
         return allResumeItems.filter { it.type == ResumeItemType.PROJECT }
     }
 
-    private fun getResumeItemEducation(): List<ResumeItem> {
+    private fun getResumeItemsEducation(): List<ResumeItem> {
         return allResumeItems.filter { it.type == ResumeItemType.EDUCATION }
     }
 
-    private fun getResumeItemCertificate(): List<ResumeItem> {
+    private fun getResumeItemsCertificate(): List<ResumeItem> {
         return allResumeItems.filter { it.type == ResumeItemType.CERTIFICATE }
     }
 

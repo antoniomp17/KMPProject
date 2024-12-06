@@ -11,10 +11,9 @@ fun GetTopBarType(navigator: Navigator): TopBarTypes {
 
     val currentNavigatorEntry = navigator.currentEntry.collectAsState(null).value
 
-    val isOnDetailedInfo = currentNavigatorEntry?.route?.route.equals("/jobExperience/{id}") ||
-            currentNavigatorEntry?.route?.route.equals("/resumeItem/{id}")
+    val isNotHome = !currentNavigatorEntry?.route?.route.equals("/home") && currentNavigatorEntry != null
 
-    if (isOnDetailedInfo) {
+    if (isNotHome) {
         topBarType = TopBarTypes.NOT_HOME
     }
 
