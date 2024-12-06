@@ -5,10 +5,14 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.skydoves.landscapist.ImageOptions
 import com.skydoves.landscapist.coil3.CoilImage
 
 @Composable
-fun CoilImageComposable(modifier: Modifier = Modifier, imageUrl: String){
+fun CoilImageComposable(
+    modifier: Modifier = Modifier,
+    imageUrl: String,
+    imageOptions: ImageOptions = ImageOptions()){
     CoilImage(
         modifier = modifier,
         imageModel = {  imageUrl },
@@ -21,6 +25,7 @@ fun CoilImageComposable(modifier: Modifier = Modifier, imageUrl: String){
         },
         failure = {
             FailureLoadingImage()
-        }
+        },
+        imageOptions = imageOptions
     )
 }

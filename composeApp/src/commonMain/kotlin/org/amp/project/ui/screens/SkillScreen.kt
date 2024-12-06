@@ -12,27 +12,26 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import composeResources.Res
-import composeResources.languages
-import org.amp.project.presentation.LanguageUiState
-import org.amp.project.ui.components.language.LanguageLazyColumnComposable
+import composeResources.skills
+import org.amp.project.presentation.SkillUiState
+import org.amp.project.ui.components.skill.SkillLazyGridComposable
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun LanguageScreen(languageUiState: LanguageUiState){
+fun SkillScreen(skillUiState: SkillUiState){
 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp, top = 32.dp),
+            .padding(horizontal = 16.dp, vertical = 32.dp),
         verticalArrangement = Arrangement.spacedBy(32.dp)
     ) {
         Text(
-            text = stringResource(Res.string.languages),
+            text = stringResource(Res.string.skills),
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold,
             letterSpacing = 0.5.sp
         )
-
-        LanguageLazyColumnComposable(languageItemList = languageUiState.languages)
+        SkillLazyGridComposable(skillItemList = skillUiState.skills)
     }
 }

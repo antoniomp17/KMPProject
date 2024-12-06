@@ -29,6 +29,7 @@ import com.skydoves.landscapist.coil3.CoilImage
 import org.amp.project.model.ResumeItem
 import org.amp.project.ui.utils.FailureLoadingImage
 import org.amp.project.ui.theme.primaryLight
+import org.amp.project.ui.theme.surfaceContainerLight
 import org.amp.project.ui.utils.CoilImageComposable
 
 @Composable
@@ -43,8 +44,7 @@ fun ResumeItemComposable(
             .aspectRatio(3f)
             .padding(2.dp)
             .clickable{onResumeItemClick(resumeItem)},
-        border = CardDefaults.outlinedCardBorder(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)){
+        border = CardDefaults.outlinedCardBorder()){
 
         Row(
             modifier = Modifier

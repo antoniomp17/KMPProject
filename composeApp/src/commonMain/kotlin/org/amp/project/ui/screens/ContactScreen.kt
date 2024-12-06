@@ -24,7 +24,7 @@ fun ContactScreen(contactUiState: ContactUiState){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp, top = 64.dp),
+            .padding(start = 16.dp, end = 16.dp, top = 32.dp),
         verticalArrangement = Arrangement.spacedBy(32.dp)
     ) {
         Text(

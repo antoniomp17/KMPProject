@@ -54,6 +54,9 @@ fun AppContent() {
                 },
                 onContactClick = {
                     navigator.navigate("/contact")
+                },
+                onSkillsClick = {
+                    navigator.navigate("/skills")
                 }
             )
         }

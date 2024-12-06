@@ -1,10 +1,10 @@
 package org.amp.project.ui.components.contact
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
-import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalUriHandler
@@ -33,7 +33,7 @@ fun SocialLazyGridComposable(
                     it.url?.let { url -> uriHandler.openUri(url) }
                 }
             ){
-                Icon(
+                Image(
                     painter = getIconForType(it.type),
                     contentDescription = it.type.name
                 )

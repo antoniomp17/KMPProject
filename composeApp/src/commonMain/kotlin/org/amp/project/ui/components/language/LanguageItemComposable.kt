@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.amp.project.model.LanguageItem
 import org.amp.project.ui.theme.primaryLight
+import org.amp.project.ui.theme.surfaceContainerLight
 
 @Composable
 fun LanguageItemComposable(languageItem: LanguageItem){
@@ -29,8 +30,8 @@ fun LanguageItemComposable(languageItem: LanguageItem){
             .fillMaxWidth()
             .aspectRatio(4f)
             .padding(2.dp),
-        border = CardDefaults.outlinedCardBorder(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)){
+        border = CardDefaults.outlinedCardBorder()
+    ){
 
         Row(
             modifier = Modifier

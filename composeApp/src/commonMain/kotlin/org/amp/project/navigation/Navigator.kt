@@ -15,14 +15,18 @@ import org.amp.project.data.language.LanguageManager
 import org.amp.project.data.language.LanguageRepositoryImpl
 import org.amp.project.data.otherResume.OtherResumeItemManager
 import org.amp.project.data.otherResume.OtherOtherResumeItemRepositoryImpl
+import org.amp.project.data.skill.SkillManager
+import org.amp.project.data.skill.SkillRepositoryImpl
 import org.amp.project.presentation.ContactViewModel
 import org.amp.project.presentation.JobExperienceViewModel
 import org.amp.project.presentation.LanguageViewModel
 import org.amp.project.presentation.ResumeItemViewModel
+import org.amp.project.presentation.SkillViewModel
 import org.amp.project.ui.screens.ContactScreen
 import org.amp.project.ui.screens.DetailJobExperienceScreen
 import org.amp.project.ui.screens.LanguageScreen
 import org.amp.project.ui.screens.ResumeScreen
+import org.amp.project.ui.screens.SkillScreen
 
 @Composable
 fun Navigation(navigator: Navigator) {
@@ -38,6 +42,9 @@ fun Navigation(navigator: Navigator) {
     }
     val languageViewModel = viewModel(modelClass = LanguageViewModel::class) {
         LanguageViewModel(repo = LanguageRepositoryImpl(LanguageManager))
+    }
+    val skillViewModel = viewModel(modelClass = SkillViewModel::class) {
+        SkillViewModel(repo = SkillRepositoryImpl(SkillManager))
     }
 
     NavHost(
@@ -74,6 +81,11 @@ fun Navigation(navigator: Navigator) {
         scene(route = "/languages"){
             val languageUiState by languageViewModel.uiState.collectAsStateWithLifecycle()
             LanguageScreen(languageUiState = languageUiState)
+        }
+
+        scene(route = "/skills"){
+            val skillUiState by skillViewModel.uiState.collectAsStateWithLifecycle()
+            SkillScreen(skillUiState = skillUiState)
         }
     }
 }

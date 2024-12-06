@@ -38,6 +38,7 @@ fun NavigationDrawerContent(
     drawerState: DrawerState,
     onContactClick: () -> Unit,
     onLanguageClick: () -> Unit,
+    onSkillsClick: () -> Unit
 ) {
 
     val scope = rememberCoroutineScope()
@@ -74,7 +75,7 @@ fun NavigationDrawerContent(
                 onClick = {
                     onContactClick()
                     scope.launch {
-                        drawerState.close() // Cierra el drawer
+                        drawerState.close()
                     }
                 },
                 selected = false
@@ -93,7 +94,7 @@ fun NavigationDrawerContent(
                 onClick = {
                     onLanguageClick()
                     scope.launch {
-                        drawerState.close() // Cierra el drawer
+                        drawerState.close()
                     }
                 },
                 selected = false
@@ -109,7 +110,12 @@ fun NavigationDrawerContent(
                             .padding(16.dp)
                     )
                 },
-                onClick = {},
+                onClick = {
+                    onSkillsClick()
+                    scope.launch {
+                        drawerState.close()
+                    }
+                },
                 selected = false
             )
         }

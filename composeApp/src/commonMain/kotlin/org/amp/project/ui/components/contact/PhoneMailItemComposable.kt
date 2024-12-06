@@ -32,8 +32,8 @@ fun PhoneMailItemComposable(phoneMailItem: ContactItem){
             .fillMaxWidth()
             .aspectRatio(4f)
             .padding(2.dp),
-        border = CardDefaults.outlinedCardBorder(),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)){
+        border = CardDefaults.outlinedCardBorder()
+    ){
 
         Row(
             modifier = Modifier
