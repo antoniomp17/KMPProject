@@ -60,9 +60,7 @@ fun Navigation(navigator: Navigator) {
                 onJobExperienceClick = { jobExperience ->
                     navigator.navigate("/jobExperience/${jobExperience.id}")
                 },
-                onResumeItemClick = { resumeItem ->
-                    navigator.navigate("/resumeItem/${resumeItem.id}")
-                }
+                onResumeItemClick = {}
             )
         }
 
