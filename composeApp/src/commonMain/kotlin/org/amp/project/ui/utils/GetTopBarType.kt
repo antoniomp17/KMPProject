@@ -1,21 +1,21 @@
 package org.amp.project.ui.utils
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
-import moe.tlaster.precompose.navigation.Navigator
+import androidx.compose.runtime.getValue
+import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
 import org.amp.project.data.utils.TopBarTypes
+import org.amp.project.navigation.NavigationScreens
 
 @Composable
-fun GetTopBarType(navigator: Navigator): TopBarTypes {
-    var topBarType = TopBarTypes.HOME
+fun GetTopBarType(navController: NavController): TopBarTypes {
+    val currentBackStackEntry by navController.currentBackStackEntryAsState()
 
-    val currentNavigatorEntry = navigator.currentEntry.collectAsState(null).value
+    val currentRoute = currentBackStackEntry?.destination?.route
 
-    val isNotHome = !currentNavigatorEntry?.route?.route.equals("/home") && currentNavigatorEntry != null
-
-    if (isNotHome) {
-        topBarType = TopBarTypes.NOT_HOME
+    return if (currentRoute != NavigationScreens.Home.route) {
+        TopBarTypes.NOT_HOME
+    } else {
+        TopBarTypes.HOME
     }
-
-    return topBarType
 }

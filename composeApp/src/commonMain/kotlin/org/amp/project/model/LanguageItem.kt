@@ -12,5 +12,5 @@ enum class LanguageLevel(val description: String){
     LIMITED("Limited working proficiency"),
     PROFESSIONAL("Professional working proficiency"),
     FULL("Full professional proficiency"),
-    NATIVE("Native proficiency")
+    NATIVE("Native")
 }

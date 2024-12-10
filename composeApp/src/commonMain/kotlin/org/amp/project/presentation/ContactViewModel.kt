@@ -1,11 +1,11 @@
 package org.amp.project.presentation
 
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import moe.tlaster.precompose.viewmodel.ViewModel
-import moe.tlaster.precompose.viewmodel.viewModelScope
 import org.amp.project.domain.ContactRepository
 import org.amp.project.model.ContactItem
 import org.amp.project.model.ContactItemType
@@ -15,7 +15,7 @@ data class ContactUiState(
     val socials: List<ContactItem> = emptyList()
 )
 
-class ContactViewModel(private val repo: ContactRepository): ViewModel(){
+class ContactViewModel(repo: ContactRepository): ViewModel(){
 
     private val _uiState = MutableStateFlow(ContactUiState())
     val uiState = _uiState.asStateFlow()

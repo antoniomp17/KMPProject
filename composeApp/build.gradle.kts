@@ -55,15 +55,22 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.runtime.compose)
 
-            //precompose
-            api(libs.moe.tlaster.precompose)
-            api(libs.moe.tlaster.precompose.viewmodel)
-
             //landscapist-glide
             implementation(libs.landscapist.coil3)
 
             //compose rich editor
             implementation(libs.richeditor.compose)
+
+            //Adaptive
+            implementation(libs.compose.multiplatform.material3.adaptive)
+            implementation(libs.compose.multiplatform.material3.adaptive.layout)
+            implementation(libs.compose.multiplatform.material3.adaptive.navigation)
+
+            //viewModel
+            implementation(libs.viewmodel)
+
+            //Navigation
+            implementation(libs.navigation)
         }
     }
 }
@@ -103,8 +110,6 @@ compose.resources {
 }
 
 dependencies {
-    implementation(libs.androidx.ui.text.google.fonts)
-    implementation(libs.androidx.material3.android)
     debugImplementation(compose.uiTooling)
 }
 

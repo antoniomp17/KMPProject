@@ -1,11 +1,11 @@
 package org.amp.project.presentation
 
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import moe.tlaster.precompose.viewmodel.ViewModel
-import moe.tlaster.precompose.viewmodel.viewModelScope
 import org.amp.project.domain.JobExperienceRepository
 import org.amp.project.model.JobExperienceItem
 
@@ -13,7 +13,7 @@ data class JobExperienceUiState(
     val jobExperiences: List<JobExperienceItem> = emptyList()
 )
 
-class JobExperienceViewModel(private val repo: JobExperienceRepository): ViewModel(){
+class JobExperienceViewModel(repo: JobExperienceRepository): ViewModel(){
 
     private val _uiState = MutableStateFlow(JobExperienceUiState())
     val uiState = _uiState.asStateFlow()

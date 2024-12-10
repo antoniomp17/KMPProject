@@ -3,10 +3,10 @@ package org.amp.project.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import moe.tlaster.precompose.navigation.NavHost
-import moe.tlaster.precompose.navigation.Navigator
-import moe.tlaster.precompose.navigation.path
-import moe.tlaster.precompose.viewmodel.viewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import org.amp.project.data.contact.ContactManager
 import org.amp.project.data.contact.ContactRepositoryImpl
 import org.amp.project.data.jobExperience.JobExperienceManager
@@ -29,28 +29,23 @@ import org.amp.project.ui.screens.ResumeScreen
 import org.amp.project.ui.screens.SkillScreen
 
 @Composable
-fun Navigation(navigator: Navigator) {
+fun Navigation(navController: NavHostController) {
 
-    val jobExperienceViewModel = viewModel(modelClass = JobExperienceViewModel::class) {
-        JobExperienceViewModel(repo = JobExperienceRepositoryImpl(JobExperienceManager))
-    }
-    val resumeItemViewModel = viewModel(modelClass = ResumeItemViewModel::class) {
-        ResumeItemViewModel(repo = OtherOtherResumeItemRepositoryImpl(OtherResumeItemManager))
-    }
-    val contactViewModel = viewModel(modelClass = ContactViewModel::class) {
-        ContactViewModel(repo = ContactRepositoryImpl(ContactManager))
-    }
-    val languageViewModel = viewModel(modelClass = LanguageViewModel::class) {
-        LanguageViewModel(repo = LanguageRepositoryImpl(LanguageManager))
-    }
-    val skillViewModel = viewModel(modelClass = SkillViewModel::class) {
-        SkillViewModel(repo = SkillRepositoryImpl(SkillManager))
-    }
+    val jobExperienceViewModel = viewModel{ JobExperienceViewModel(JobExperienceRepositoryImpl(JobExperienceManager)) }
+
+    val resumeItemViewModel = viewModel{ ResumeItemViewModel(OtherOtherResumeItemRepositoryImpl(OtherResumeItemManager)) }
+
+    val contactViewModel = viewModel{ ContactViewModel(ContactRepositoryImpl(ContactManager)) }
+
+    val languageViewModel = viewModel{ LanguageViewModel(LanguageRepositoryImpl(LanguageManager)) }
+
+    val skillViewModel = viewModel{ SkillViewModel(SkillRepositoryImpl(SkillManager)) }
 
     NavHost(
-         navigator = navigator, initialRoute = "/home"
+        navController = navController,
+        startDestination = NavigationScreens.Home.route
     ){
-        scene(route = "/home"){
+        composable(route = NavigationScreens.Home.route){
             val jobExperienceUiState by jobExperienceViewModel.uiState.collectAsStateWithLifecycle()
             val resumeItemUiState by resumeItemViewModel.uiState.collectAsStateWithLifecycle()
 
@@ -58,30 +53,30 @@ fun Navigation(navigator: Navigator) {
                 jobExperienceUiState = jobExperienceUiState,
                 resumeItemUiState = resumeItemUiState,
                 onJobExperienceClick = { jobExperience ->
-                    navigator.navigate("/jobExperience/${jobExperience.id}")
+                    navController.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
                 },
                 onResumeItemClick = {}
             )
         }
 
-        scene(route = "/jobExperience/{id}"){ backStackEntry ->
-            val idFromPath = backStackEntry.path<Long>("id")!!
+        composable(route = "${NavigationScreens.JobExperience.route}/{id}"){ backStackEntry ->
+            val idFromPath = backStackEntry.arguments?.getString("id")?.toLongOrNull()!!
             val jobExperience = jobExperienceViewModel.getJobExperienceById(idFromPath)
 
             DetailJobExperienceScreen(jobExperience = jobExperience)
         }
 
-        scene(route = "/contact"){
+        composable(route = NavigationScreens.Contact.route){
             val contactUiState by contactViewModel.uiState.collectAsStateWithLifecycle()
             ContactScreen(contactUiState = contactUiState)
         }
 
-        scene(route = "/languages"){
+        composable(route = NavigationScreens.Languages.route){
             val languageUiState by languageViewModel.uiState.collectAsStateWithLifecycle()
             LanguageScreen(languageUiState = languageUiState)
         }
 
-        scene(route = "/skills"){
+        composable(route = NavigationScreens.Skills.route){
             val skillUiState by skillViewModel.uiState.collectAsStateWithLifecycle()
             SkillScreen(skillUiState = skillUiState)
         }

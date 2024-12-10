@@ -4,7 +4,6 @@ import androidx.compose.material3.DrawerState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import kotlinx.coroutines.CoroutineScope
-import moe.tlaster.precompose.navigation.Navigator
 import org.amp.project.data.utils.TopBarTypes
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -12,8 +11,7 @@ import org.amp.project.data.utils.TopBarTypes
 fun AppTopBar(
     topBarType: TopBarTypes,
     drawerState: DrawerState,
-    scope: CoroutineScope,
-    navigator: Navigator
+    scope: CoroutineScope
 ) {
 
 }
