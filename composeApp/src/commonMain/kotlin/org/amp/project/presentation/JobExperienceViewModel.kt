@@ -11,7 +11,11 @@ import org.amp.project.model.JobExperienceItem
 
 data class JobExperienceUiState(
     val jobExperiences: List<JobExperienceItem> = emptyList()
-)
+){
+    fun getJobExperienceById(id: Long): JobExperienceItem {
+        return jobExperiences.first { it.id == id }
+    }
+}
 
 class JobExperienceViewModel(repo: JobExperienceRepository): ViewModel(){
 
@@ -33,10 +37,6 @@ class JobExperienceViewModel(repo: JobExperienceRepository): ViewModel(){
         _uiState.update { state ->
             state.copy(jobExperiences = allJobExperiences)
         }
-    }
-
-    fun getJobExperienceById(id: Long): JobExperienceItem {
-        return allJobExperiences.first { it.id == id }
     }
 
 }
