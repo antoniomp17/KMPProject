@@ -37,9 +37,10 @@ fun ExpandedLayout(
     skillUiState: SkillUiState
 ) {
     Scaffold(
-        modifier = Modifier.fillMaxSize().nestedScroll(scrollBehavior.nestedScrollConnection),
+        modifier = Modifier
+            .fillMaxSize()
+            .nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-
             TopAppBar(
                 topBarType = topBarType,
                 navigator = navigator,

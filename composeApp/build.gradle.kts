@@ -12,7 +12,6 @@ plugins {
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
@@ -33,13 +32,9 @@ kotlin {
                         add(projectDirPath)
                     }
                 }
-                mode = KotlinWebpackConfig.Mode.DEVELOPMENT
             }
         }
         binaries.executable()
-        compilerOptions {
-            freeCompilerArgs.add("-Xwasm-debugger-custom-formatters")
-        }
     }
     
     sourceSets {
@@ -64,11 +59,6 @@ kotlin {
 
             //compose rich editor
             implementation(libs.richeditor.compose)
-
-            //Adaptive
-            implementation(libs.compose.multiplatform.material3.adaptive)
-            implementation(libs.compose.multiplatform.material3.adaptive.layout)
-            implementation(libs.compose.multiplatform.material3.adaptive.navigation)
 
             //viewModel
             implementation(libs.viewmodel)
