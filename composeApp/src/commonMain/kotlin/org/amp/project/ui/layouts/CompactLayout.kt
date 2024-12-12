@@ -1,4 +1,4 @@
-package org.amp.project.ui.main.layouts
+package org.amp.project.ui.layouts
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,6 +23,7 @@ import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.LanguageUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
+import org.amp.project.ui.components.mainLayout.compact.CustomBottomAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,48 +37,34 @@ fun CompactLayout(
     languageUiState: LanguageUiState,
     skillUiState: SkillUiState
 ) {
-    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
-    val scope = rememberCoroutineScope()
-
-    ModalNavigationDrawer(
-        drawerState = drawerState,
-        drawerContent = {
-            NavigationDrawerContent(
-                drawerState = drawerState,
-                onLanguageClick = { navigator.navigate("/languages") },
-                onContactClick = { navigator.navigate("/contact") },
-                onSkillsClick = { navigator.navigate("/skills") }
+    Scaffold(
+        modifier = Modifier
+            .fillMaxSize()
+            .nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            TopAppBar(
+                scrollBehavior = scrollBehavior,
+                topBarType = topBarType,
+                navigator = navigator
             )
+        },
+        bottomBar = {
+            CustomBottomAppBar( navigator = navigator )
         }
-    ) {
-        Scaffold(
+    ) { paddingValues ->
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .nestedScroll(scrollBehavior.nestedScrollConnection),
-            topBar = {
-                TopAppBar(
-                    topBarType = topBarType,
-                    drawerState = drawerState,
-                    scope = scope,
-                    navigator = navigator,
-                    scrollBehavior = scrollBehavior
-                )
-            }
-        ) { paddingValues ->
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(paddingValues)
-            ) {
-                Navigation(
-                    navController = navigator,
-                    jobExperienceUiState = jobExperienceUiState,
-                    resumeItemUiState = resumeItemUiState,
-                    contactUiState = contactUiState,
-                    languageUiState = languageUiState,
-                    skillUiState = skillUiState
-                )
-            }
+                .padding(paddingValues)
+        ) {
+            Navigation(
+                navController = navigator,
+                jobExperienceUiState = jobExperienceUiState,
+                resumeItemUiState = resumeItemUiState,
+                contactUiState = contactUiState,
+                languageUiState = languageUiState,
+                skillUiState = skillUiState
+            )
         }
     }
 }

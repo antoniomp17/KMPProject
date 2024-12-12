@@ -1,4 +1,4 @@
-package org.amp.project.ui.main
+package org.amp.project.ui
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -26,9 +26,9 @@ import org.amp.project.presentation.JobExperienceViewModel
 import org.amp.project.presentation.LanguageViewModel
 import org.amp.project.presentation.ResumeItemViewModel
 import org.amp.project.presentation.SkillViewModel
-import org.amp.project.ui.main.layouts.CompactLayout
-import org.amp.project.ui.main.layouts.ExpandedLayout
-import org.amp.project.ui.main.layouts.MediumLayout
+import org.amp.project.ui.layouts.CompactLayout
+import org.amp.project.ui.layouts.ExpandedLayout
+import org.amp.project.ui.layouts.MediumLayout
 import org.amp.project.ui.utils.GetTopBarType
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -36,7 +36,6 @@ import org.amp.project.ui.utils.GetTopBarType
 fun AppContent() {
     val navigator = rememberNavController()
     val topBarType = GetTopBarType(navigator)
-    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
     val density = LocalDensity.current
 
     val jobExperienceViewModel = viewModel{
@@ -97,7 +96,7 @@ fun AppContent() {
                 CompactLayout(
                     navigator = navigator,
                     topBarType = topBarType,
-                    scrollBehavior = scrollBehavior,
+                    scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(),
                     jobExperienceUiState = jobExperienceUiState,
                     resumeItemUiState = resumeItemUiState,
                     contactUiState = contactUiState,
@@ -109,7 +108,6 @@ fun AppContent() {
                 MediumLayout(
                     navigator = navigator,
                     topBarType = topBarType,
-                    scrollBehavior = scrollBehavior,
                     jobExperienceUiState = jobExperienceUiState,
                     resumeItemUiState = resumeItemUiState,
                     contactUiState = contactUiState,
@@ -120,8 +118,6 @@ fun AppContent() {
             WindowSizeClass.EXPANDED -> {
                 ExpandedLayout(
                     navigator = navigator,
-                    topBarType = topBarType,
-                    scrollBehavior = scrollBehavior,
                     jobExperienceUiState = jobExperienceUiState,
                     resumeItemUiState = resumeItemUiState,
                     contactUiState = contactUiState,

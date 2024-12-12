@@ -2,7 +2,6 @@ package org.amp.project.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
@@ -18,10 +17,10 @@ import org.amp.project.ui.components.jobs.JobsComposable
 import org.amp.project.ui.components.otherResume.ResumeItemsComposable
 
 @Composable
-fun ResumeScreen(jobExperienceUiState: JobExperienceUiState,
-                 resumeItemUiState: ResumeItemUiState,
-                 onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit,
-                 onResumeItemClick: (resumeItem: ResumeItem) -> Unit
+fun HomeScreen(jobExperienceUiState: JobExperienceUiState,
+               resumeItemUiState: ResumeItemUiState,
+               onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit,
+               onResumeItemClick: (resumeItem: ResumeItem) -> Unit
 ) {
     Column(
         modifier = Modifier

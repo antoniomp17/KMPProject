@@ -11,7 +11,7 @@ import org.amp.project.data.jobExperience.JobExperienceManager
 import org.amp.project.data.otherResume.OtherResumeItemManager
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.ResumeItemUiState
-import org.amp.project.ui.screens.ResumeScreen
+import org.amp.project.ui.screens.HomeScreen
 import org.amp.project.ui.theme.AppTheme
 
 @Preview(showBackground = true)
@@ -19,7 +19,7 @@ import org.amp.project.ui.theme.AppTheme
 fun ResumeScreenPreview() {
     AppTheme {
         Box(modifier = Modifier.padding(8.dp).fillMaxSize()) {
-            ResumeScreen(
+            HomeScreen(
                 jobExperienceUiState = JobExperienceUiState(
                     jobExperiences = JobExperienceManager.fakeJobExperienceList
                 ),

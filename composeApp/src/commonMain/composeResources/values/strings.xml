@@ -16,4 +16,5 @@
     <string name="image_failed_to_load">Image Failed to Load</string>
     <string name="icon_resource_not_found">Icon resource not found for type</string>
     <string name="years">Years</string>
+    <string name="resume">Resume</string>
 </resources>

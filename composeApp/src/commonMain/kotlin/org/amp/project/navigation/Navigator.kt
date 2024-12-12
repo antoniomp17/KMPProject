@@ -12,7 +12,7 @@ import org.amp.project.presentation.SkillUiState
 import org.amp.project.ui.screens.ContactScreen
 import org.amp.project.ui.screens.DetailJobExperienceScreen
 import org.amp.project.ui.screens.LanguageScreen
-import org.amp.project.ui.screens.ResumeScreen
+import org.amp.project.ui.screens.HomeScreen
 import org.amp.project.ui.screens.SkillScreen
 
 @Composable
@@ -22,28 +22,30 @@ fun Navigation(
     resumeItemUiState: ResumeItemUiState,
     contactUiState: ContactUiState,
     languageUiState: LanguageUiState,
-    skillUiState: SkillUiState
+    skillUiState: SkillUiState,
+    isExpanded: Boolean = false
 ) {
 
     NavHost(
         navController = navController,
-        startDestination = NavigationScreens.Home.route
+        startDestination = NavigationScreens.Contact.route
     ){
-        composable(route = NavigationScreens.Home.route){
-            ResumeScreen(
-                jobExperienceUiState = jobExperienceUiState,
-                resumeItemUiState = resumeItemUiState,
-                onJobExperienceClick = { jobExperience ->
-                    navController.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
-                },
-                onResumeItemClick = {}
-            )
+        if(!isExpanded){
+            composable(route = NavigationScreens.Home.route){
+                HomeScreen(
+                    jobExperienceUiState = jobExperienceUiState,
+                    resumeItemUiState = resumeItemUiState,
+                    onJobExperienceClick = { jobExperience ->
+                        navController.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
+                    },
+                    onResumeItemClick = {}
+                )
+            }
         }
 
         composable(route = "${NavigationScreens.JobExperience.route}/{id}"){ backStackEntry ->
             val idFromPath = backStackEntry.arguments?.getString("id")?.toLongOrNull()!!
             val jobExperience = jobExperienceUiState.getJobExperienceById(idFromPath)
-
             DetailJobExperienceScreen(jobExperience = jobExperience)
         }
 
