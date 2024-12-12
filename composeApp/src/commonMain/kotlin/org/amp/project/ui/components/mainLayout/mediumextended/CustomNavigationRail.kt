@@ -1,5 +1,6 @@
-package org.amp.project.ui.components.mainLayout.medium
+package org.amp.project.ui.components.mainLayout.mediumextended
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -49,7 +50,8 @@ fun CustomNavigationRail(
             CoilImageComposable(
                 modifier = Modifier
                     .size(36.dp)
-                    .clip(CircleShape),
+                    .clip(CircleShape)
+                    .clickable { navigator.navigate(NavigationScreens.Home.route) },
                 imageUrl = Links.AMP_IMAGE_LINK
             )
         },
@@ -57,10 +59,7 @@ fun CustomNavigationRail(
             items.forEachIndexed { index, item ->
                 NavigationRailItem(
                     selected =
-                    if(
-                        currentRoute != NavigationScreens.Home.route &&
-                        currentRoute != NavigationScreens.JobExperience.route
-                    ){
+                    if(items.any { it.second == currentRoute }){
                         selectedItem == index
                     } else false,
                     onClick = {

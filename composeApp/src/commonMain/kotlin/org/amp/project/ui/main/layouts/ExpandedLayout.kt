@@ -22,7 +22,7 @@ import org.amp.project.presentation.LanguageUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
-import org.amp.project.ui.components.mainLayout.medium.CustomNavigationRail
+import org.amp.project.ui.components.mainLayout.mediumextended.CustomNavigationRail
 import org.amp.project.ui.screens.ResumeScreen
 
 @OptIn(ExperimentalMaterial3Api::class)

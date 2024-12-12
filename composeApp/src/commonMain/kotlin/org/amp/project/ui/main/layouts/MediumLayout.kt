@@ -15,7 +15,7 @@ import androidx.navigation.NavHostController
 import org.amp.project.data.utils.TopBarTypes
 import org.amp.project.navigation.Navigation
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
-import org.amp.project.ui.components.mainLayout.medium.CustomNavigationRail
+import org.amp.project.ui.components.mainLayout.mediumextended.CustomNavigationRail
 import org.amp.project.presentation.ContactUiState
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.LanguageUiState

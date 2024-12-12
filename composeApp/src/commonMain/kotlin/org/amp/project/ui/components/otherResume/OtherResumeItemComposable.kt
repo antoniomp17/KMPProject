@@ -44,7 +44,8 @@ fun ResumeItemComposable(
             .aspectRatio(3f)
             .padding(2.dp)
             .clickable{onResumeItemClick(resumeItem)},
-        border = CardDefaults.outlinedCardBorder()){
+        border = CardDefaults.outlinedCardBorder()
+    ){
 
         Row(
             modifier = Modifier
