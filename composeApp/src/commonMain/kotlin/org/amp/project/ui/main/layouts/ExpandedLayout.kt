@@ -1,5 +1,6 @@
 package org.amp.project.ui.main.layouts
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -36,53 +37,60 @@ fun ExpandedLayout(
     languageUiState: LanguageUiState,
     skillUiState: SkillUiState
 ) {
-    Scaffold(
+    Row(
         modifier = Modifier
             .fillMaxSize()
-            .nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            TopAppBar(
-                topBarType = topBarType,
-                navigator = navigator,
-                scrollBehavior = scrollBehavior
-            )
-        }
-    ) { paddingValues ->
-        Row(
+    ) {
+        CustomNavigationRail(navigator)
+        Scaffold(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-        ) {
-            CustomNavigationRail(navigator)
-            Box(
-                modifier = Modifier
-                    .weight(2f)
-                    .padding(horizontal = 16.dp)
-            ) {
-                ResumeScreen(
-                    jobExperienceUiState = jobExperienceUiState,
-                    resumeItemUiState = resumeItemUiState,
-                    onJobExperienceClick = { jobExperience ->
-                        navigator.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
-                    },
-                    onResumeItemClick = {}
+                .weight(2f)
+                .nestedScroll(scrollBehavior.nestedScrollConnection),
+            topBar = {
+                TopAppBar(
+                    topBarType = topBarType,
+                    navigator = navigator,
+                    scrollBehavior = scrollBehavior,
+                    showNavigationIcon = false
                 )
             }
-            Box(
+        ) { paddingValues ->
+            Row(
                 modifier = Modifier
-                    .weight(3f)
-                    .padding(horizontal = 16.dp)
+                    .fillMaxSize()
+                    .padding(paddingValues),
+                horizontalArrangement = Arrangement.spacedBy(24.dp)
             ) {
-                if (navigator.currentBackStackEntry?.destination?.route != "/home") {
-                    Navigation(
-                        navController = navigator,
+                Box(
+                    modifier = Modifier
+                        .weight(2f)
+                        .padding(horizontal = 16.dp)
+                ) {
+                    ResumeScreen(
                         jobExperienceUiState = jobExperienceUiState,
                         resumeItemUiState = resumeItemUiState,
-                        contactUiState = contactUiState,
-                        languageUiState = languageUiState,
-                        skillUiState = skillUiState
+                        onJobExperienceClick = { jobExperience ->
+                            navigator.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
+                        },
+                        onResumeItemClick = {}
                     )
                 }
+            }
+        }
+        Box(
+            modifier = Modifier
+                .weight(3f)
+                .padding(horizontal = 16.dp)
+        ) {
+            if (navigator.currentBackStackEntry?.destination?.route != "/home") {
+                Navigation(
+                    navController = navigator,
+                    jobExperienceUiState = jobExperienceUiState,
+                    resumeItemUiState = resumeItemUiState,
+                    contactUiState = contactUiState,
+                    languageUiState = languageUiState,
+                    skillUiState = skillUiState
+                )
             }
         }
     }

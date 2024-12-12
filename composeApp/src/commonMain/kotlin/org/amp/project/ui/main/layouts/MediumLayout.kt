@@ -42,7 +42,8 @@ fun MediumLayout(
             TopAppBar(
                 topBarType = topBarType,
                 navigator = navigator,
-                scrollBehavior = scrollBehavior
+                scrollBehavior = scrollBehavior,
+                showNavigationIcon = false
             )
         }
     ) { paddingValues ->

@@ -21,7 +21,8 @@ fun TopAppBar(
     drawerState: DrawerState? = null,
     scope: CoroutineScope? = null,
     navigator: NavHostController,
-    scrollBehavior: TopAppBarScrollBehavior
+    scrollBehavior: TopAppBarScrollBehavior,
+    showNavigationIcon: Boolean = true
 ) {
     CenterAlignedTopAppBar(
         title = {
@@ -31,12 +32,14 @@ fun TopAppBar(
             )
         },
         navigationIcon = {
-            NavigationIcon(
-                topBarType = topBarType,
-                drawerState = drawerState,
-                scope = scope,
-                navigator = navigator
-            )
+            if(showNavigationIcon){
+                NavigationIcon(
+                    topBarType = topBarType,
+                    drawerState = drawerState,
+                    scope = scope,
+                    navigator = navigator
+                )
+            }
         },
         scrollBehavior = scrollBehavior
     )
