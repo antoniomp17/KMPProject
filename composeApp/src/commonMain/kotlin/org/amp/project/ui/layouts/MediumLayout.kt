@@ -31,25 +31,27 @@ fun MediumLayout(
     languageUiState: LanguageUiState,
     skillUiState: SkillUiState
 ) {
-    Scaffold(
+    Row(
         modifier = Modifier
-            .fillMaxSize(),
-        topBar = {
-            TopAppBar(
-                scrollBehavior = null,
-                topBarType = topBarType
-            )
-        }
-    ) { paddingValues ->
-        Row(
+            .fillMaxSize()
+    ) {
+        CustomNavigationRail(navigator)
+
+        Scaffold(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues)
-        ) {
-            CustomNavigationRail(navigator)
+                .fillMaxSize(),
+            topBar = {
+                TopAppBar(
+                    scrollBehavior = null,
+                    navigator = navigator,
+                    topBarType = topBarType
+                )
+            }
+        ) { paddingValues ->
             Box(
                 modifier = Modifier
-                    .padding(horizontal = 16.dp)
+                    .fillMaxSize()
+                    .padding(paddingValues)
             ) {
                 Navigation(
                     navController = navigator,
@@ -60,6 +62,7 @@ fun MediumLayout(
                     skillUiState = skillUiState
                 )
             }
+
         }
     }
 }

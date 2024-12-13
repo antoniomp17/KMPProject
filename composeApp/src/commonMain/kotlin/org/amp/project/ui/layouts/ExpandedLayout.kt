@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -32,6 +33,7 @@ fun ExpandedLayout(
     languageUiState: LanguageUiState,
     skillUiState: SkillUiState
 ) {
+
     Row(
         modifier = Modifier
             .fillMaxSize()
@@ -47,26 +49,19 @@ fun ExpandedLayout(
                 TopAppBar( scrollBehavior = null )
             }
         ) { paddingValues ->
-            Row(
+            Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(paddingValues),
-                horizontalArrangement = Arrangement.spacedBy(24.dp)
+                    .padding(paddingValues)
             ) {
-                Box(
-                    modifier = Modifier
-                        .weight(2f)
-                        .padding(horizontal = 16.dp)
-                ) {
-                    HomeScreen(
-                        jobExperienceUiState = jobExperienceUiState,
-                        resumeItemUiState = resumeItemUiState,
-                        onJobExperienceClick = { jobExperience ->
-                            navigator.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
-                        },
-                        onResumeItemClick = {}
-                    )
-                }
+                HomeScreen(
+                    jobExperienceUiState = jobExperienceUiState,
+                    resumeItemUiState = resumeItemUiState,
+                    onJobExperienceClick = { jobExperience ->
+                        navigator.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
+                    },
+                    onResumeItemClick = {}
+                )
             }
         }
         Box(

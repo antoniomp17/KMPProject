@@ -10,6 +10,7 @@ kotlin = "2.1.0"
 landscapist-coil3 = "2.4.4"
 richeditor-compose = "1.0.0-rc10"
 androidx-navigation = "2.8.0-alpha11"
+composables-core = "1.20.0"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
@@ -26,6 +27,9 @@ viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-com
 
 #Navigation
 navigation = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
+
+#Composables-core
+composables-core = { module = "com.composables:core", version.ref = "composables-core" }
 
 
 [plugins]
