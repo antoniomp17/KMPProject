@@ -11,6 +11,7 @@ import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
 import org.amp.project.ui.screens.ContactScreen
 import org.amp.project.ui.screens.DetailJobExperienceScreen
+import org.amp.project.ui.screens.DownloadScreen
 import org.amp.project.ui.screens.LanguageScreen
 import org.amp.project.ui.screens.HomeScreen
 import org.amp.project.ui.screens.SkillScreen
@@ -28,7 +29,7 @@ fun Navigation(
 
     NavHost(
         navController = navController,
-        startDestination = NavigationScreens.Contact.route
+        startDestination = if(!isExpanded) NavigationScreens.Contact.route else NavigationScreens.Download.route
     ){
         if(!isExpanded){
             composable(route = NavigationScreens.Home.route){
@@ -40,6 +41,10 @@ fun Navigation(
                     },
                     onResumeItemClick = {}
                 )
+            }
+        } else {
+            composable(route = NavigationScreens.Download.route){
+                DownloadScreen()
             }
         }
 

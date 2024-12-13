@@ -74,17 +74,15 @@ fun ExpandedLayout(
                 .weight(3f)
                 .padding(horizontal = 16.dp)
         ) {
-            if (navigator.currentBackStackEntry?.destination?.route != NavigationScreens.Home.route) {
-                Navigation(
-                    navController = navigator,
-                    jobExperienceUiState = jobExperienceUiState,
-                    resumeItemUiState = resumeItemUiState,
-                    contactUiState = contactUiState,
-                    languageUiState = languageUiState,
-                    skillUiState = skillUiState,
-                    isExpanded = true
-                )
-            }
+            Navigation(
+                navController = navigator,
+                jobExperienceUiState = jobExperienceUiState,
+                resumeItemUiState = resumeItemUiState,
+                contactUiState = contactUiState,
+                languageUiState = languageUiState,
+                skillUiState = skillUiState,
+                isExpanded = true
+            )
         }
     }
 }

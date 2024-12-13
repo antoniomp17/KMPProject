@@ -6,6 +6,7 @@ sealed class NavigationScreens(val route: String) {
     data object Contact : NavigationScreens(route = "/contact")
     data object Languages : NavigationScreens(route = "/languages")
     data object Skills : NavigationScreens(route = "/skills")
+    data object Download : NavigationScreens(route = "/download")
 
     // Pantallas dinámicas
     data object JobExperience : NavigationScreens(route = "/jobExperience") {

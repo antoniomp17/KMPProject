@@ -17,4 +17,7 @@
     <string name="icon_resource_not_found">Icon resource not found for type</string>
     <string name="years">Years</string>
     <string name="resume">Resume</string>
+    <string name="download_app">Download the Android App</string>
+    <string name="download_app_description">This app is fully developed in kotlin multiplatform and is available for download</string>
+    <string name="download_app_apk">Download the APK</string>
 </resources>
