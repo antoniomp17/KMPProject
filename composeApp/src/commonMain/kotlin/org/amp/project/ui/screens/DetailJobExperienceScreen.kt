@@ -33,12 +33,11 @@ fun DetailJobExperienceScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp)
+            .padding(horizontal = 16.dp, vertical = 32.dp)
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
-        Spacer(modifier = Modifier.height(32.dp))
         JobPosition(jobExperience.position)
         JobDetailsRow(jobExperience.companyName, jobExperience.clientName)
         JobDuration(jobExperience.startDate, jobExperience.endDate)

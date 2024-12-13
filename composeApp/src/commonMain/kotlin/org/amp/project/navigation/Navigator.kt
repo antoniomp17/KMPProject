@@ -29,7 +29,7 @@ fun Navigation(
 
     NavHost(
         navController = navController,
-        startDestination = if(!isExpanded) NavigationScreens.Contact.route else NavigationScreens.Download.route
+        startDestination = if(!isExpanded) NavigationScreens.Home.route else NavigationScreens.Download.route
     ){
         if(!isExpanded){
             composable(route = NavigationScreens.Home.route){
