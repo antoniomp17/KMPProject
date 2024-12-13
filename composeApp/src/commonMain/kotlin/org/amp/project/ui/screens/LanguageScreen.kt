@@ -23,16 +23,9 @@ fun LanguageScreen(languageUiState: LanguageUiState){
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(start = 16.dp, end = 16.dp, top = 32.dp),
-        verticalArrangement = Arrangement.spacedBy(32.dp)
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center
     ) {
-        Text(
-            text = stringResource(Res.string.languages),
-            style = MaterialTheme.typography.titleLarge,
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 0.5.sp
-        )
-
         LanguageLazyColumnComposable(languageItemList = languageUiState.languages)
     }
 }

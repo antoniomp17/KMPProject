@@ -84,11 +84,12 @@ fun AppContent() {
     BoxWithConstraints {
 
         val screenWidthDp = with(density) {  constraints.maxWidth.toDp() }
+        val screenHeightDp = with(density) {  constraints.maxHeight.toDp() }
 
         val windowSize = when {
-            screenWidthDp < 600.dp -> WindowSizeClass.COMPACT
-            screenWidthDp < 840.dp -> WindowSizeClass.MEDIUM
-            else -> WindowSizeClass.EXPANDED
+            screenWidthDp > screenHeightDp -> WindowSizeClass.EXPANDED
+            screenWidthDp <= screenHeightDp && screenWidthDp < 600.dp -> WindowSizeClass.COMPACT
+            else -> WindowSizeClass.MEDIUM
         }
 
         when (windowSize) {
