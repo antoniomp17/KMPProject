@@ -38,8 +38,7 @@ fun Navigation(
                     resumeItemUiState = resumeItemUiState,
                     onJobExperienceClick = { jobExperience ->
                         navController.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
-                    },
-                    onResumeItemClick = {}
+                    }
                 )
             }
         } else {

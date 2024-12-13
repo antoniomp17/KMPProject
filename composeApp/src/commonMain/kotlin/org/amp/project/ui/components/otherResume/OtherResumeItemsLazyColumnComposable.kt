@@ -14,9 +14,8 @@ import androidx.compose.ui.unit.dp
 import org.amp.project.model.ResumeItem
 
 @Composable
-fun ResumeItemsLazyColumnComposable(
-    resumeItemList: List<ResumeItem>,
-    onResumeItemClick: (resumeItem: ResumeItem) -> Unit
+fun OtherResumeItemsLazyColumnComposable(
+    resumeItemList: List<ResumeItem>
 ) {
     BoxWithConstraints(
         modifier = Modifier.fillMaxSize()
@@ -34,7 +33,7 @@ fun ResumeItemsLazyColumnComposable(
             userScrollEnabled = false
         ) {
             items(resumeItemList) {
-                ResumeItemComposable(resumeItem = it, onResumeItemClick)
+                ResumeItemComposable(resumeItem = it)
             }
         }
     }

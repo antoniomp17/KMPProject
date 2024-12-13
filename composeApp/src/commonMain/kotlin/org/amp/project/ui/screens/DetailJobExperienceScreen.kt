@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,9 +29,8 @@ import org.amp.project.ui.components.jobDetail.JobDescription
 import org.amp.project.ui.components.jobDetail.JobDetailsRow
 import org.amp.project.ui.components.jobDetail.JobDuration
 import org.amp.project.ui.components.jobDetail.JobPosition
-import org.amp.project.ui.components.jobs.JobsComposable
-import org.amp.project.ui.components.otherResume.ResumeItemsComposable
 import org.amp.project.ui.theme.outlineLight
+import org.amp.project.ui.theme.outlineVariantDark
 import org.amp.project.ui.utils.CoilImageComposable
 
 @Composable
@@ -48,7 +46,9 @@ fun DetailJobExperienceScreen(
     ScrollArea(
         state = state
     ) {
-        Row{
+        Row(
+            modifier = Modifier.padding(end = 8.dp),
+        ){
             Column(
                 modifier = Modifier
                     .verticalScroll(scrollState)
@@ -76,6 +76,7 @@ fun DetailJobExperienceScreen(
                 modifier = Modifier.align(Alignment.TopEnd)
                     .fillMaxHeight()
                     .width(8.dp)
+                    .background(outlineVariantDark, RoundedCornerShape(100))
             ) {
                 Thumb(Modifier.background(outlineLight, RoundedCornerShape(100)))
             }

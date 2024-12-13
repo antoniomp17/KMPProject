@@ -44,7 +44,6 @@ fun PhoneMailItemComposable(phoneMailItem: ContactItem){
 
             Icon(
                 modifier = Modifier
-                    .weight(1f)
                     .padding(16.dp)
                     .clip(CircleShape),
                 painter = getIconForType(phoneMailItem.type),
@@ -52,7 +51,7 @@ fun PhoneMailItemComposable(phoneMailItem: ContactItem){
             )
 
             Column(
-                modifier = Modifier.weight(2f),
+                modifier = Modifier.weight(1f),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ){
@@ -67,7 +66,8 @@ fun PhoneMailItemComposable(phoneMailItem: ContactItem){
                         text = phoneMailItem.data,
                         style = MaterialTheme.typography.bodyMedium,
                         fontWeight = FontWeight.Light,
-                        letterSpacing = 0.5.sp
+                        letterSpacing = 0.5.sp,
+                        maxLines = 1
                     )
                 }
             }

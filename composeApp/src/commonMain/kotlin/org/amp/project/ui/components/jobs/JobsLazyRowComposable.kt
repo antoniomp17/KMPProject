@@ -20,6 +20,7 @@ import com.composables.core.Thumb
 import com.composables.core.rememberScrollAreaState
 import org.amp.project.model.JobExperienceItem
 import org.amp.project.ui.theme.outlineLight
+import org.amp.project.ui.theme.outlineVariantDark
 
 
 @Composable
@@ -45,7 +46,8 @@ fun JobsLazyRowComposable(jobExperienceList: List<JobExperienceItem>,
             HorizontalScrollbar(
                 modifier = Modifier.align(Alignment.BottomStart)
                     .fillMaxWidth()
-                    .height(8.dp)
+                    .height(12.dp)
+                    .background(outlineVariantDark, RoundedCornerShape(100))
             ) {
                 Thumb(Modifier.background(outlineLight, RoundedCornerShape(100)))
             }

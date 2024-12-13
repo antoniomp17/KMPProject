@@ -13,9 +13,9 @@ fun GetTopBarType(navController: NavController): TopBarTypes {
 
     val currentRoute = currentBackStackEntry?.destination?.route
 
-    return if (currentRoute != NavigationScreens.Home.route) {
-        TopBarTypes.NOT_HOME
+    return if (currentRoute?.let { NavigationScreens.JobExperience.isJobExperienceRoute(it) } == true) {
+        TopBarTypes.JOB_DESCRIPTION
     } else {
-        TopBarTypes.HOME
+        TopBarTypes.NOT_JOB_DESCRIPTION
     }
 }

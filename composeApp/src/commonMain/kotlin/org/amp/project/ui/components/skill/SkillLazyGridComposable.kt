@@ -34,6 +34,7 @@ import com.composables.core.rememberScrollAreaState
 import com.skydoves.landscapist.ImageOptions
 import org.amp.project.model.SkillItem
 import org.amp.project.ui.theme.outlineLight
+import org.amp.project.ui.theme.outlineVariantDark
 import org.amp.project.ui.utils.CoilImageComposable
 
 @Composable
@@ -98,6 +99,7 @@ fun SkillLazyGridComposable(
                 modifier = Modifier.align(Alignment.TopEnd)
                     .fillMaxHeight()
                     .width(8.dp)
+                    .background(outlineVariantDark, RoundedCornerShape(100))
             ) {
                 Thumb(Modifier.background(outlineLight, RoundedCornerShape(100)))
             }

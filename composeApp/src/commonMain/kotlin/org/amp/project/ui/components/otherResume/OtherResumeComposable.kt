@@ -10,12 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.amp.project.model.ResumeItem
-import org.amp.project.ui.theme.onBackgroundLight
 
 @Composable
 fun ResumeItemsComposable(
-    resumeItemList: List<ResumeItem>,
-    onResumeItemClick: (resumeItem: ResumeItem) -> Unit
+    resumeItemList: List<ResumeItem>
 ) {
     Column(
         verticalArrangement = Arrangement.SpaceEvenly
@@ -25,7 +23,7 @@ fun ResumeItemsComposable(
             text = resumeItemList[0].type.title
         )
         Spacer(modifier = Modifier.height(4.dp))
-        ResumeItemsLazyColumnComposable(resumeItemList, onResumeItemClick)
+        OtherResumeItemsLazyColumnComposable(resumeItemList)
     }
 }
 

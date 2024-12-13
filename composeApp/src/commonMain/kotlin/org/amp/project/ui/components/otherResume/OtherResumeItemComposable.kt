@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -34,16 +35,18 @@ import org.amp.project.ui.utils.CoilImageComposable
 
 @Composable
 fun ResumeItemComposable(
-    resumeItem: ResumeItem,
-    onResumeItemClick: (resumeItem: ResumeItem) -> Unit
+    resumeItem: ResumeItem
 ){
+    val uriHandler = LocalUriHandler.current
 
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .aspectRatio(3f)
             .padding(2.dp)
-            .clickable{onResumeItemClick(resumeItem)},
+            .clickable{
+                resumeItem.link.let { url -> uriHandler.openUri(url) }
+            },
         border = CardDefaults.outlinedCardBorder()
     ){
 

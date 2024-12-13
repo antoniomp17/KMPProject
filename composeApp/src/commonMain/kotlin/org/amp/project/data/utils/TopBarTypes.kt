@@ -1,6 +1,6 @@
 package org.amp.project.data.utils
 
 enum class TopBarTypes {
-    HOME,
-    NOT_HOME,
+    JOB_DESCRIPTION,
+    NOT_JOB_DESCRIPTION
 }

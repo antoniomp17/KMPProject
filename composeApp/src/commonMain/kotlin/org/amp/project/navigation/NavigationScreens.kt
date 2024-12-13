@@ -11,5 +11,8 @@ sealed class NavigationScreens(val route: String) {
     // Pantallas dinámicas
     data object JobExperience : NavigationScreens(route = "/jobExperience") {
         fun createRoute(id: Long): String = "$route/$id"
+        fun isJobExperienceRoute(path: String): Boolean {
+           return path == "/jobExperience/{id}"
+        }
     }
 }

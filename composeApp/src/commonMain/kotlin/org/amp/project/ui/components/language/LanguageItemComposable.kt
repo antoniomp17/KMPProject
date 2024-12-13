@@ -56,13 +56,15 @@ fun LanguageItemComposable(languageItem: LanguageItem){
                     text = languageItem.language,
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp
+                    letterSpacing = 0.5.sp,
+                    textAlign = TextAlign.Center
                 )
                 Text(
                     text = languageItem.level.description,
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Light,
-                    letterSpacing = 0.5.sp
+                    letterSpacing = 0.5.sp,
+                    textAlign = TextAlign.Center
                 )
             }
         }

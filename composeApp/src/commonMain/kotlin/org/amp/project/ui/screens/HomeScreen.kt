@@ -26,18 +26,17 @@ import com.composables.core.VerticalScrollbar
 import com.composables.core.rememberScrollAreaState
 import org.amp.project.model.JobExperienceItem
 import org.amp.project.model.ResumeItem
-import org.amp.project.navigation.NavigationScreens
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.ui.components.jobs.JobsComposable
 import org.amp.project.ui.components.otherResume.ResumeItemsComposable
 import org.amp.project.ui.theme.outlineLight
+import org.amp.project.ui.theme.outlineVariantDark
 
 @Composable
 fun HomeScreen(jobExperienceUiState: JobExperienceUiState,
                resumeItemUiState: ResumeItemUiState,
-               onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit,
-               onResumeItemClick: (resumeItem: ResumeItem) -> Unit
+               onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit
 ) {
     val scrollState = rememberScrollState()
     val state = rememberScrollAreaState(scrollState)
@@ -45,7 +44,7 @@ fun HomeScreen(jobExperienceUiState: JobExperienceUiState,
     ScrollArea(
         state = state
     ) {
-        Row{
+        Row(modifier = Modifier.padding(end = 8.dp)){
             Column(
                 modifier = Modifier
                     .verticalScroll(scrollState)
@@ -54,14 +53,15 @@ fun HomeScreen(jobExperienceUiState: JobExperienceUiState,
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ){
                 JobsComposable(jobExperienceList = jobExperienceUiState.jobExperiences, onJobExperienceClick = onJobExperienceClick)
-                ResumeItemsComposable(resumeItemList = resumeItemUiState.projectResumeItems, onResumeItemClick = onResumeItemClick)
-                ResumeItemsComposable(resumeItemList = resumeItemUiState.educationResumeItems, onResumeItemClick = onResumeItemClick)
-                ResumeItemsComposable(resumeItemList = resumeItemUiState.certificateResumeItems, onResumeItemClick = onResumeItemClick)
+                ResumeItemsComposable(resumeItemList = resumeItemUiState.projectResumeItems)
+                ResumeItemsComposable(resumeItemList = resumeItemUiState.educationResumeItems)
+                ResumeItemsComposable(resumeItemList = resumeItemUiState.certificateResumeItems)
             }
             VerticalScrollbar(
                 modifier = Modifier.align(Alignment.TopEnd)
                     .fillMaxHeight()
                     .width(8.dp)
+                    .background(outlineVariantDark, RoundedCornerShape(100))
             ) {
                 Thumb(Modifier.background(outlineLight, RoundedCornerShape(100)))
             }
