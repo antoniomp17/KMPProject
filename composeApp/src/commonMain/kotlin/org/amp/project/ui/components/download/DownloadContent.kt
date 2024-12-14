@@ -19,6 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import composeResources.Res
@@ -46,12 +47,14 @@ fun DownloadContent(){
             text = stringResource(Res.string.download_app),
             style = MaterialTheme.typography.displaySmall,
             fontWeight = FontWeight.Bold,
-            letterSpacing = 0.5.sp
+            letterSpacing = 0.5.sp,
+            textAlign = TextAlign.Center
         )
         Text(
             text = stringResource(Res.string.download_app_description),
             style = MaterialTheme.typography.bodyLarge,
-            letterSpacing = 0.5.sp
+            letterSpacing = 0.5.sp,
+            textAlign = TextAlign.Center
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -71,7 +74,8 @@ fun DownloadContent(){
                 Text(
                     text = stringResource(Res.string.download_app_apk),
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp
+                    letterSpacing = 0.5.sp,
+                    textAlign = TextAlign.Center
                 )
             }
         }

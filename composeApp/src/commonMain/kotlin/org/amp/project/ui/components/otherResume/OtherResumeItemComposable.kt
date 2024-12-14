@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.skydoves.landscapist.ImageOptions
@@ -72,20 +73,23 @@ fun ResumeItemComposable(
                     text = resumeItem.itemName,
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp
+                    letterSpacing = 0.5.sp,
+                    textAlign = TextAlign.Center
                 )
                 Text(
                     text = resumeItem.siteName,
                     style = MaterialTheme.typography.bodyMedium,
                     fontWeight = FontWeight.Light,
-                    letterSpacing = 0.5.sp
+                    letterSpacing = 0.5.sp,
+                    textAlign = TextAlign.Center
                 )
                 if(resumeItem.location.isNotEmpty()){
                     Text(
                         text = resumeItem.location,
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Light,
-                        letterSpacing = 0.5.sp
+                        letterSpacing = 0.5.sp,
+                        textAlign = TextAlign.Center
                     )
                 }
                 Text(
@@ -98,7 +102,8 @@ fun ResumeItemComposable(
                     }",
                     style = MaterialTheme.typography.bodySmall,
                     fontWeight = FontWeight.Light,
-                    letterSpacing = 0.5.sp
+                    letterSpacing = 0.5.sp,
+                    textAlign = TextAlign.Center
                 )
             }
         }
