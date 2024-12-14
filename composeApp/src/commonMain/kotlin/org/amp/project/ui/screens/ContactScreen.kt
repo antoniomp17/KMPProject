@@ -32,8 +32,11 @@ import composeResources.profile_image
 import org.amp.project.presentation.ContactUiState
 import org.amp.project.ui.components.contact.PhoneMailLazyColumnComposable
 import org.amp.project.ui.components.contact.SocialLazyGridComposable
+import org.amp.project.ui.components.jobs.JobsComposable
+import org.amp.project.ui.components.otherResume.ResumeItemsComposable
 import org.amp.project.ui.theme.outlineLight
 import org.amp.project.ui.theme.outlineVariantDark
+import org.amp.project.ui.utils.PutVerticalScrollbarIfWeb
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -43,41 +46,30 @@ fun ContactScreen(contactUiState: ContactUiState){
     val scrollState = rememberScrollState()
     val state = rememberScrollAreaState(scrollState)
 
-    ScrollArea(
+    PutVerticalScrollbarIfWeb(
         state = state
-    ) {
-        Row(modifier = Modifier.padding(end = 8.dp)){
-            Column(
-                modifier = Modifier
-                    .padding(16.dp)
-                    .verticalScroll(scrollState)
-                    .weight(1f),
-                verticalArrangement = Arrangement.SpaceEvenly,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Image(
-                    painter = painterResource(Res.drawable.profile_image),
-                    contentDescription = stringResource(Res.string.amp_logo),
-                    modifier = Modifier.size(192.dp)
-                )
-                Text(
-                    text = stringResource(Res.string.name),
-                    style = MaterialTheme.typography.displaySmall,
-                    fontWeight = FontWeight.Bold,
-                    letterSpacing = 0.5.sp,
-                    textAlign = TextAlign.Center
-                )
-                PhoneMailLazyColumnComposable(phoneMailItemList = contactUiState.phoneMails)
-                SocialLazyGridComposable(socialItemList = contactUiState.socials)
-            }
-            VerticalScrollbar(
-                modifier = Modifier.align(Alignment.TopEnd)
-                    .fillMaxHeight()
-                    .width(8.dp)
-                    .background(outlineVariantDark, RoundedCornerShape(100))
-            ) {
-                Thumb(Modifier.background(outlineLight, RoundedCornerShape(100)))
-            }
+    ){
+        Column(
+            modifier = Modifier
+                .padding(16.dp)
+                .verticalScroll(scrollState),
+            verticalArrangement = Arrangement.SpaceEvenly,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(Res.drawable.profile_image),
+                contentDescription = stringResource(Res.string.amp_logo),
+                modifier = Modifier.size(192.dp)
+            )
+            Text(
+                text = stringResource(Res.string.name),
+                style = MaterialTheme.typography.displaySmall,
+                fontWeight = FontWeight.Bold,
+                letterSpacing = 0.5.sp,
+                textAlign = TextAlign.Center
+            )
+            PhoneMailLazyColumnComposable(phoneMailItemList = contactUiState.phoneMails)
+            SocialLazyGridComposable(socialItemList = contactUiState.socials)
         }
     }
 }
