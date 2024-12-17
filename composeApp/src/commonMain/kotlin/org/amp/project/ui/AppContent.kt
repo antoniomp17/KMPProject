@@ -20,20 +20,25 @@ import org.amp.project.data.otherResume.OtherOtherResumeItemRepositoryImpl
 import org.amp.project.data.otherResume.OtherResumeItemManager
 import org.amp.project.data.skill.SkillManager
 import org.amp.project.data.skill.SkillRepositoryImpl
+import org.amp.project.data.theme.ThemeManager
+import org.amp.project.data.theme.ThemeRepositoryImpl
 import org.amp.project.data.utils.WindowSizeClass
 import org.amp.project.presentation.ContactViewModel
 import org.amp.project.presentation.JobExperienceViewModel
 import org.amp.project.presentation.LanguageViewModel
 import org.amp.project.presentation.ResumeItemViewModel
 import org.amp.project.presentation.SkillViewModel
+import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.layouts.CompactLayout
 import org.amp.project.ui.layouts.ExpandedLayout
 import org.amp.project.ui.layouts.MediumLayout
+import org.amp.project.ui.theme.AppTheme
 import org.amp.project.ui.utils.GetTopBarType
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppContent() {
+
     val navigator = rememberNavController()
     val topBarType = GetTopBarType(navigator)
     val density = LocalDensity.current
@@ -73,58 +78,71 @@ fun AppContent() {
             )
         )
     }
+    val themeViewModel = viewModel{
+        ThemeViewModel(
+            ThemeRepositoryImpl(
+                ThemeManager
+            )
+        )
+    }
 
     val jobExperienceUiState by jobExperienceViewModel.uiState.collectAsStateWithLifecycle()
     val resumeItemUiState by resumeItemViewModel.uiState.collectAsStateWithLifecycle()
     val contactUiState by contactViewModel.uiState.collectAsStateWithLifecycle()
     val languageUiState by languageViewModel.uiState.collectAsStateWithLifecycle()
     val skillUiState by skillViewModel.uiState.collectAsStateWithLifecycle()
+    val themeUiState by themeViewModel.uiState.collectAsStateWithLifecycle()
 
 
-    BoxWithConstraints {
+    AppTheme(darkTheme = themeUiState.theme?.isDarkTheme ?: false){
+        BoxWithConstraints {
 
-        val screenWidthDp = with(density) {  constraints.maxWidth.toDp() }
-        val screenHeightDp = with(density) {  constraints.maxHeight.toDp() }
+            val screenWidthDp = with(density) {  constraints.maxWidth.toDp() }
+            val screenHeightDp = with(density) {  constraints.maxHeight.toDp() }
 
-        val windowSize = when {
-            screenWidthDp > screenHeightDp -> WindowSizeClass.EXPANDED
-            screenWidthDp <= screenHeightDp && screenWidthDp < 600.dp -> WindowSizeClass.COMPACT
-            else -> WindowSizeClass.MEDIUM
-        }
-
-        when (windowSize) {
-            WindowSizeClass.COMPACT -> {
-                CompactLayout(
-                    navigator = navigator,
-                    topBarType = topBarType,
-                    scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(),
-                    jobExperienceUiState = jobExperienceUiState,
-                    resumeItemUiState = resumeItemUiState,
-                    contactUiState = contactUiState,
-                    languageUiState = languageUiState,
-                    skillUiState = skillUiState
-                )
+            val windowSize = when {
+                screenWidthDp > screenHeightDp -> WindowSizeClass.EXPANDED
+                screenWidthDp <= screenHeightDp && screenWidthDp < 600.dp -> WindowSizeClass.COMPACT
+                else -> WindowSizeClass.MEDIUM
             }
-            WindowSizeClass.MEDIUM -> {
-                MediumLayout(
-                    navigator = navigator,
-                    topBarType = topBarType,
-                    jobExperienceUiState = jobExperienceUiState,
-                    resumeItemUiState = resumeItemUiState,
-                    contactUiState = contactUiState,
-                    languageUiState = languageUiState,
-                    skillUiState = skillUiState
-                )
-            }
-            WindowSizeClass.EXPANDED -> {
-                ExpandedLayout(
-                    navigator = navigator,
-                    jobExperienceUiState = jobExperienceUiState,
-                    resumeItemUiState = resumeItemUiState,
-                    contactUiState = contactUiState,
-                    languageUiState = languageUiState,
-                    skillUiState = skillUiState
-                )
+
+            when (windowSize) {
+                WindowSizeClass.COMPACT -> {
+                    CompactLayout(
+                        navigator = navigator,
+                        topBarType = topBarType,
+                        scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(),
+                        jobExperienceUiState = jobExperienceUiState,
+                        resumeItemUiState = resumeItemUiState,
+                        contactUiState = contactUiState,
+                        languageUiState = languageUiState,
+                        skillUiState = skillUiState,
+                        themeViewModel = themeViewModel
+                    )
+                }
+                WindowSizeClass.MEDIUM -> {
+                    MediumLayout(
+                        navigator = navigator,
+                        topBarType = topBarType,
+                        jobExperienceUiState = jobExperienceUiState,
+                        resumeItemUiState = resumeItemUiState,
+                        contactUiState = contactUiState,
+                        languageUiState = languageUiState,
+                        skillUiState = skillUiState,
+                        themeViewModel = themeViewModel
+                    )
+                }
+                WindowSizeClass.EXPANDED -> {
+                    ExpandedLayout(
+                        navigator = navigator,
+                        jobExperienceUiState = jobExperienceUiState,
+                        resumeItemUiState = resumeItemUiState,
+                        contactUiState = contactUiState,
+                        languageUiState = languageUiState,
+                        skillUiState = skillUiState,
+                        themeViewModel = themeViewModel
+                    )
+                }
             }
         }
     }

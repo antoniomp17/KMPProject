@@ -3,26 +3,22 @@ package org.amp.project.ui.layouts
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarScrollBehavior
-import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.NavHostController
 import org.amp.project.data.utils.TopBarTypes
 import org.amp.project.navigation.Navigation
-import org.amp.project.ui.components.mainLayout.common.TopAppBar
-import org.amp.project.ui.components.mainLayout.compact.NavigationDrawerContent
 import org.amp.project.presentation.ContactUiState
 import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.LanguageUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
+import org.amp.project.presentation.ThemeViewModel
+import org.amp.project.ui.components.mainLayout.common.TopAppBar
 import org.amp.project.ui.components.mainLayout.compact.CustomBottomAppBar
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,7 +31,8 @@ fun CompactLayout(
     resumeItemUiState: ResumeItemUiState,
     contactUiState: ContactUiState,
     languageUiState: LanguageUiState,
-    skillUiState: SkillUiState
+    skillUiState: SkillUiState,
+    themeViewModel: ThemeViewModel
 ) {
     Scaffold(
         modifier = Modifier
@@ -45,7 +42,8 @@ fun CompactLayout(
             TopAppBar(
                 scrollBehavior = scrollBehavior,
                 topBarType = topBarType,
-                navigator = navigator
+                navigator = navigator,
+                themeViewModel = themeViewModel
             )
         },
         bottomBar = {

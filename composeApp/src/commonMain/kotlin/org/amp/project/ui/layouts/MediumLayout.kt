@@ -8,7 +8,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import org.amp.project.data.utils.TopBarTypes
 import org.amp.project.navigation.Navigation
@@ -17,6 +16,7 @@ import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.LanguageUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
+import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
 import org.amp.project.ui.components.mainLayout.mediumextended.CustomNavigationRail
 
@@ -29,7 +29,8 @@ fun MediumLayout(
     resumeItemUiState: ResumeItemUiState,
     contactUiState: ContactUiState,
     languageUiState: LanguageUiState,
-    skillUiState: SkillUiState
+    skillUiState: SkillUiState,
+    themeViewModel: ThemeViewModel
 ) {
     Row(
         modifier = Modifier
@@ -44,7 +45,8 @@ fun MediumLayout(
                 TopAppBar(
                     scrollBehavior = null,
                     navigator = navigator,
-                    topBarType = topBarType
+                    topBarType = topBarType,
+                    themeViewModel = themeViewModel
                 )
             }
         ) { paddingValues ->

@@ -17,6 +17,7 @@ import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.LanguageUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
+import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
 import org.amp.project.ui.components.mainLayout.mediumextended.CustomNavigationRail
 import org.amp.project.ui.screens.HomeScreen
@@ -29,7 +30,8 @@ fun ExpandedLayout(
     resumeItemUiState: ResumeItemUiState,
     contactUiState: ContactUiState,
     languageUiState: LanguageUiState,
-    skillUiState: SkillUiState
+    skillUiState: SkillUiState,
+    themeViewModel: ThemeViewModel
 ) {
 
     Row(
@@ -44,7 +46,10 @@ fun ExpandedLayout(
             modifier = Modifier
                 .weight(2f),
             topBar = {
-                TopAppBar( scrollBehavior = null )
+                TopAppBar(
+                    scrollBehavior = null,
+                    themeViewModel = themeViewModel
+                )
             }
         ) { paddingValues ->
             Box(

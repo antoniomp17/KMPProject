@@ -1,8 +1,11 @@
 package org.amp.project.ui.components.mainLayout.common
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.DarkMode
+import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.Web
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -17,6 +20,7 @@ import composeResources.amp_logo
 import org.amp.project.data.utils.Links
 import org.amp.project.data.utils.TopBarTypes
 import org.amp.project.data.utils.isWeb
+import org.amp.project.presentation.ThemeViewModel
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -25,7 +29,8 @@ import org.jetbrains.compose.resources.stringResource
 fun TopAppBar(
     scrollBehavior: TopAppBarScrollBehavior? = null,
     topBarType: TopBarTypes? = null,
-    navigator: NavHostController? = null
+    navigator: NavHostController? = null,
+    themeViewModel: ThemeViewModel
 ) {
     val uriHandler = LocalUriHandler.current
 
@@ -51,14 +56,35 @@ fun TopAppBar(
             }
         },
         actions = {
-            if(!isWeb()){
-                IconButton(onClick = {
-                    uriHandler.openUri(Links.WEB_APP)
-                }){
-                    Icon(
-                        imageVector = Icons.Default.Web,
-                        contentDescription = Icons.Default.Web.name
-                    )
+            Row{
+                if(themeViewModel.uiState.value.theme?.isDarkTheme == true){
+                    IconButton(onClick = {
+                        themeViewModel.changeTheme(false)
+                    }){
+                        Icon(
+                            imageVector = Icons.Default.LightMode,
+                            contentDescription = Icons.Default.LightMode.name
+                        )
+                    }
+                } else {
+                    IconButton(onClick = {
+                        themeViewModel.changeTheme(true)
+                    }){
+                        Icon(
+                            imageVector = Icons.Default.DarkMode,
+                            contentDescription = Icons.Default.DarkMode.name
+                        )
+                    }
+                }
+                if(!isWeb()){
+                    IconButton(onClick = {
+                        uriHandler.openUri(Links.WEB_APP)
+                    }){
+                        Icon(
+                            imageVector = Icons.Default.Web,
+                            contentDescription = Icons.Default.Web.name
+                        )
+                    }
                 }
             }
         },

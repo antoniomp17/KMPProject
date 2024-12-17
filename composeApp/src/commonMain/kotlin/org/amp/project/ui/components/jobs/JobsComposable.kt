@@ -12,7 +12,6 @@ import androidx.compose.ui.unit.dp
 import composeResources.Res
 import composeResources.experience
 import org.amp.project.model.JobExperienceItem
-import org.amp.project.ui.theme.onBackgroundLight
 import org.jetbrains.compose.resources.stringResource
 
 @Composable

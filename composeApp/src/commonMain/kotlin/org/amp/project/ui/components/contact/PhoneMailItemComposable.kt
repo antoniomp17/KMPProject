@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -21,7 +22,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.amp.project.model.ContactItem
-import org.amp.project.ui.theme.primaryLight
 import org.amp.project.ui.utils.getIconForType
 
 @Composable
@@ -31,6 +31,7 @@ fun PhoneMailItemComposable(phoneMailItem: ContactItem){
         modifier = Modifier
             .fillMaxWidth()
             .aspectRatio(4f)
+            .sizeIn(maxHeight = 64.dp)
             .padding(2.dp),
         border = CardDefaults.outlinedCardBorder()
     ){

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -47,6 +48,7 @@ fun SkillLazyGridComposable(
                     modifier = Modifier
                         .fillMaxWidth()
                         .aspectRatio(0.75f)
+                        .sizeIn(maxHeight = 64.dp)
                         .padding(horizontal =  8.dp, vertical = 16.dp),
                     border = CardDefaults.outlinedCardBorder()
                 ) {
