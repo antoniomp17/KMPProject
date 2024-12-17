@@ -21,12 +21,16 @@ import com.composables.core.ScrollAreaState
 import com.composables.core.Thumb
 import com.composables.core.VerticalScrollbar
 import org.amp.project.data.utils.isWeb
+import org.amp.project.presentation.ThemeUiState
+import org.amp.project.ui.theme.outlineDark
 import org.amp.project.ui.theme.outlineLight
 import org.amp.project.ui.theme.outlineVariantDark
+import org.amp.project.ui.theme.outlineVariantLight
 
 @Composable
 fun PutHorizontalScrollbarIfWeb(
     state: ScrollAreaState,
+    themeUiState: ThemeUiState,
     composable: @Composable () -> Unit
 ) {
     if(!isWeb()){
@@ -42,9 +46,21 @@ fun PutHorizontalScrollbarIfWeb(
                     modifier = Modifier.align(Alignment.BottomStart)
                         .fillMaxWidth()
                         .height(12.dp)
-                        .background(outlineVariantDark, RoundedCornerShape(100))
+                        .background(
+                            color = if(themeUiState.theme?.isDarkTheme == true){
+                                outlineVariantDark
+                            } else outlineVariantLight,
+                            shape = RoundedCornerShape(100)
+                        )
             ) {
-                    Thumb(Modifier.background(outlineLight, RoundedCornerShape(100)))
+                    Thumb(modifier = Modifier
+                        .background(
+                            color = if(themeUiState.theme?.isDarkTheme == true){
+                                outlineDark
+                            } else outlineLight,
+                            shape = RoundedCornerShape(100)
+                        )
+                    )
                 }
             }
         }
@@ -54,6 +70,7 @@ fun PutHorizontalScrollbarIfWeb(
 @Composable
 fun PutVerticalScrollbarIfWeb(
     state: ScrollAreaState,
+    themeUiState: ThemeUiState,
     composable: @Composable () -> Unit
 ) {
     if(!isWeb()){
@@ -74,9 +91,21 @@ fun PutVerticalScrollbarIfWeb(
                     modifier = Modifier.align(Alignment.TopEnd)
                         .fillMaxHeight()
                         .width(8.dp)
-                        .background(outlineVariantDark, RoundedCornerShape(100))
+                        .background(
+                            color = if(themeUiState.theme?.isDarkTheme == true){
+                                outlineVariantDark
+                            } else outlineVariantLight,
+                            shape = RoundedCornerShape(100)
+                        )
                 ) {
-                    Thumb(Modifier.background(outlineLight, RoundedCornerShape(100)))
+                    Thumb(modifier = Modifier
+                        .background(
+                            color = if(themeUiState.theme?.isDarkTheme == true){
+                                outlineDark
+                            } else outlineLight,
+                            shape = RoundedCornerShape(100)
+                        )
+                    )
                 }
             }
         }

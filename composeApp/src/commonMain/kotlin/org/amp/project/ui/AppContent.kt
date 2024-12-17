@@ -117,6 +117,7 @@ fun AppContent() {
                         contactUiState = contactUiState,
                         languageUiState = languageUiState,
                         skillUiState = skillUiState,
+                        themeUiState = themeUiState,
                         themeViewModel = themeViewModel
                     )
                 }
@@ -129,6 +130,7 @@ fun AppContent() {
                         contactUiState = contactUiState,
                         languageUiState = languageUiState,
                         skillUiState = skillUiState,
+                        themeUiState = themeUiState,
                         themeViewModel = themeViewModel
                     )
                 }
@@ -140,6 +142,7 @@ fun AppContent() {
                         contactUiState = contactUiState,
                         languageUiState = languageUiState,
                         skillUiState = skillUiState,
+                        themeUiState = themeUiState,
                         themeViewModel = themeViewModel
                     )
                 }

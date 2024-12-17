@@ -8,10 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.amp.project.presentation.SkillUiState
+import org.amp.project.presentation.ThemeUiState
 import org.amp.project.ui.components.skill.SkillLazyGridComposable
 
 @Composable
-fun SkillScreen(skillUiState: SkillUiState){
+fun SkillScreen(skillUiState: SkillUiState,
+                themeUiState: ThemeUiState
+){
 
     Column(
         modifier = Modifier
@@ -19,6 +22,9 @@ fun SkillScreen(skillUiState: SkillUiState){
             .padding(16.dp),
         verticalArrangement = Arrangement.Center
     ) {
-        SkillLazyGridComposable(skillItemList = skillUiState.skills)
+        SkillLazyGridComposable(
+            skillItemList = skillUiState.skills,
+            themeUiState = themeUiState
+        )
     }
 }

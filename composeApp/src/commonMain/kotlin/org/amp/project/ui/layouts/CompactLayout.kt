@@ -17,6 +17,7 @@ import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.LanguageUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
+import org.amp.project.presentation.ThemeUiState
 import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
 import org.amp.project.ui.components.mainLayout.compact.CustomBottomAppBar
@@ -32,6 +33,7 @@ fun CompactLayout(
     contactUiState: ContactUiState,
     languageUiState: LanguageUiState,
     skillUiState: SkillUiState,
+    themeUiState: ThemeUiState,
     themeViewModel: ThemeViewModel
 ) {
     Scaffold(
@@ -61,6 +63,7 @@ fun CompactLayout(
                 resumeItemUiState = resumeItemUiState,
                 contactUiState = contactUiState,
                 languageUiState = languageUiState,
+                themeUiState = themeUiState,
                 skillUiState = skillUiState
             )
         }

@@ -26,18 +26,21 @@ import androidx.compose.ui.unit.sp
 import com.composables.core.rememberScrollAreaState
 import com.skydoves.landscapist.ImageOptions
 import org.amp.project.model.SkillItem
+import org.amp.project.presentation.ThemeUiState
 import org.amp.project.ui.utils.CoilImageComposable
 import org.amp.project.ui.utils.PutVerticalScrollbarIfWeb
 
 @Composable
 fun SkillLazyGridComposable(
-    skillItemList: List<SkillItem>
+    skillItemList: List<SkillItem>,
+    themeUiState: ThemeUiState
 ) {
     val lazyListState = rememberLazyGridState()
     val state = rememberScrollAreaState(lazyListState)
 
     PutVerticalScrollbarIfWeb(
-        state = state
+        state = state,
+        themeUiState = themeUiState
     ){
         LazyVerticalGrid(
             columns = GridCells.Fixed(3),

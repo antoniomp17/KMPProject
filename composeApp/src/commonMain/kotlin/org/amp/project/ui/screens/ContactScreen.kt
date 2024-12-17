@@ -22,6 +22,7 @@ import composeResources.amp_logo
 import composeResources.name
 import composeResources.profile_image
 import org.amp.project.presentation.ContactUiState
+import org.amp.project.presentation.ThemeUiState
 import org.amp.project.ui.components.contact.PhoneMailLazyColumnComposable
 import org.amp.project.ui.components.contact.SocialLazyGridComposable
 import org.amp.project.ui.utils.PutVerticalScrollbarIfWeb
@@ -29,13 +30,17 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun ContactScreen(contactUiState: ContactUiState){
+fun ContactScreen(
+    contactUiState: ContactUiState,
+    themeUiState: ThemeUiState
+){
 
     val scrollState = rememberScrollState()
     val state = rememberScrollAreaState(scrollState)
 
     PutVerticalScrollbarIfWeb(
-        state = state
+        state = state,
+        themeUiState = themeUiState
     ){
         Column(
             modifier = Modifier

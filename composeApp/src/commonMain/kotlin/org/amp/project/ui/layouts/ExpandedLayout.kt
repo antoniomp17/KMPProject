@@ -17,6 +17,7 @@ import org.amp.project.presentation.JobExperienceUiState
 import org.amp.project.presentation.LanguageUiState
 import org.amp.project.presentation.ResumeItemUiState
 import org.amp.project.presentation.SkillUiState
+import org.amp.project.presentation.ThemeUiState
 import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
 import org.amp.project.ui.components.mainLayout.mediumextended.CustomNavigationRail
@@ -31,6 +32,7 @@ fun ExpandedLayout(
     contactUiState: ContactUiState,
     languageUiState: LanguageUiState,
     skillUiState: SkillUiState,
+    themeUiState: ThemeUiState,
     themeViewModel: ThemeViewModel
 ) {
 
@@ -60,6 +62,7 @@ fun ExpandedLayout(
                 HomeScreen(
                     jobExperienceUiState = jobExperienceUiState,
                     resumeItemUiState = resumeItemUiState,
+                    themeUiState = themeUiState,
                     onJobExperienceClick = { jobExperience ->
                         navigator.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
                     }
@@ -78,6 +81,7 @@ fun ExpandedLayout(
                 contactUiState = contactUiState,
                 languageUiState = languageUiState,
                 skillUiState = skillUiState,
+                themeUiState = themeUiState,
                 isExpanded = true
             )
         }
