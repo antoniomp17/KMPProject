@@ -28,10 +28,10 @@ fun PhoneMailLazyColumnComposable(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .sizeIn(
-                    maxHeight = (phoneMailItemList.size * width.value / 4.4f).dp
+                    maxHeight = (phoneMailItemList.size * width.value / 4.1f).dp
                 )
                 .fillMaxWidth()
-                .aspectRatio(4.4f / phoneMailItemList.size),
+                .aspectRatio(4.1f / phoneMailItemList.size),
             userScrollEnabled = false
         ) {
             items(phoneMailItemList) {
