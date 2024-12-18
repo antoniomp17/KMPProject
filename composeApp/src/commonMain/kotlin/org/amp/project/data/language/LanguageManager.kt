@@ -1,5 +1,8 @@
 package org.amp.project.data.language
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Language
 import org.amp.project.model.LanguageItem
 import org.amp.project.model.LanguageLevel
 
@@ -10,13 +13,13 @@ object LanguageManager {
         LanguageItem(
             id = currentId++,
             language = "Spanish",
-            flag = "\uD83C\uDDEA\uD83C\uDDF8",
+            flag = Icons.Default.Home,
             level = LanguageLevel.NATIVE
         ),
         LanguageItem(
             id = currentId++,
             language = "English",
-            flag = "\uD83C\uDDEC\uD83C\uDDE7",
+            flag = Icons.Default.Language,
             level = LanguageLevel.PROFESSIONAL
         )
     )

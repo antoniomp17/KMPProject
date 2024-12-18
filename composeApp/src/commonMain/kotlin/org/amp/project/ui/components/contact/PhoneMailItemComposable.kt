@@ -30,7 +30,7 @@ fun PhoneMailItemComposable(phoneMailItem: ContactItem){
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .aspectRatio(4f)
+            .aspectRatio(4.5f)
             .sizeIn(maxHeight = 64.dp)
             .padding(2.dp),
         border = CardDefaults.outlinedCardBorder()

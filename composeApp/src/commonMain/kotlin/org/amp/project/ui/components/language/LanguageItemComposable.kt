@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.sizeIn
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,11 +41,10 @@ fun LanguageItemComposable(languageItem: LanguageItem){
             verticalAlignment = Alignment.CenterVertically
         ){
 
-            Text(
+            Icon(
                 modifier = Modifier.weight(1f),
-                text = languageItem.flag,
-                style = MaterialTheme.typography.titleLarge,
-                textAlign = TextAlign.Center,
+                imageVector = languageItem.flag,
+                contentDescription = languageItem.flag.name
             )
 
             Column(
