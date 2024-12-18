@@ -11,13 +11,13 @@ object JobExperienceManager {
             id = currentId++,
             position = "Android Developer",
             companyName = "Akkodis",
-            companyImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Akkodis_logo.svg/1920px-Akkodis_logo.svg.png?20240102222423",
+            companyImageUrl = "https://i.ibb.co/7vxZCZm/Akkodis-logo-svg.png",
             clientName = "Mediolanum",
-            clientImageUrl = "https://blog.bancomediolanum.es/wp-content/uploads/2016/09/mediolanum_banking_group.png",
+            clientImageUrl = "https://i.ibb.co/Ss2w07L/mediolanum-banking-group.png",
             location = "Remote",
             startDate = "2023-07-01",
             endDate = "2024-10-01",
-            image = "https://www.bancamediolanum.it/static-assets/images/elementi/2023/05/25/social-mediolanum-card.jpg",
+            image = "https://i.ibb.co/3Ct7xTP/social-mediolanum-card.jpg",
             description =
             "As an **Android Developer** for **Akkodis**, I worked on the development and maintenance of the primary mobile applications for **Banco Mediolanum**, catering to both clients and financial advisors. The focus was on ensuring quality, stability, and performance, while introducing new features to enhance user experience.\n" +
                     "\n" +
@@ -39,13 +39,13 @@ object JobExperienceManager {
             id = currentId++,
             position = "Android Developer",
             companyName = "Panel Sistemas",
-            companyImageUrl = "https://www.panel.es/wp-content/uploads/2021/03/Logo-panel_blanco.png",
+            companyImageUrl = "https://i.ibb.co/JRNXYDj/Logo-panel-blanco.png",
             clientName = "Telefónica",
-            clientImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Telef%C3%B3nica_2021_logo.svg/1920px-Telef%C3%B3nica_2021_logo.svg.png?20211009193120",
+            clientImageUrl = "https://i.ibb.co/vmLwg6r/Telef-nica-2021-logo-svg.png",
             location = "Remote",
             startDate = "2023-06-30",
             endDate= "2024-02-01",
-            image = "https://www.adslzone.net/app/uploads-adslzone.net/2022/12/spotmusic-movistar.jpg",
+            image = "https://i.ibb.co/h25jd4p/spotmusic-movistar.webp",
             description =
             "As an **Android Developer** for Telefónica through **Panel Sistemas**, I played a key role in migrating a specialized embedded application, **SpotMusic**, used as a music player for businesses worldwide. The project focused on updating the application from **Android 5** to **Android 11**, ensuring compatibility and optimal performance on embedded devices.\n" +
                     "\n" +
@@ -64,13 +64,13 @@ object JobExperienceManager {
             id = currentId++,
             position = "Android Developer",
             companyName = "Cloud On Mobile",
-            companyImageUrl = "https://www.cloudonmobile.com/wp-content/uploads/2015/05/logo_com_2_white.png",
+            companyImageUrl = "https://i.ibb.co/fXVfrRV/logo-com-2-white.png",
             clientName = "Grupo SM",
-            clientImageUrl = "https://www.grupo-sm.com/sites/all/themes/sm_main_site_th/logo.png",
+            clientImageUrl = "https://i.ibb.co/xYd74GK/logo.webp",
             location = "Remote",
             startDate = "2022-09-01",
             endDate= "2024-02-01",
-            image = "https://www.grupo-sm.com/es/wp-content/uploads/2024/02/SM-educamos-atributo3.webp",
+            image = "https://i.ibb.co/3YdWYCK/SM-educamos-atributo3.webp",
             description =
             "As an **Android Developer** at Cloud On Mobile, collaborating with Grupo SM, I contributed to the development and maintenance of mobile applications designed for the educational sector, catering to thousands of users. My role focused on delivering high-quality features and resolving issues to enhance the application's functionality and user experience.\n" +
                     "\n" +
@@ -88,13 +88,13 @@ object JobExperienceManager {
             id = currentId++,
             position = "Android Developer",
             companyName = "Arquimea",
-            companyImageUrl = "https://www.fpct.ulpgc.es/images/empresas/ARQUIMEA/ARQUIMEA_LOGO_POSITIVO.png",
+            companyImageUrl = "https://i.ibb.co/2nsZ6KT/ARQUIMEA-LOGO-POSITIVO.png",
             clientName = "",
             clientImageUrl = "",
             location = "Remote",
             startDate = "2021-03-01",
             endDate= "2022-08-31",
-            image = "https://www.arquimea.com/wp-content/uploads/2022/06/arquimea_loitering-qslam40_web4-2048x1366.jpg",
+            image = "https://i.ibb.co/qpXwJtf/arquimea-loitering-qslam40-web4-2048x1366.jpg",
             description =
             "As an **Android Developer** at Arquimea, I led the complete development of a mobile application tailored for the defense sector. Starting from scratch, I utilized modern architectures and cutting-edge technologies from 2021 to deliver a robust, high-performing, and scalable application for a demanding environment.\n" +
                     "\n" +
@@ -112,13 +112,13 @@ object JobExperienceManager {
             id = currentId++,
             position = "Android Developer",
             companyName = "IMDEA Networks",
-            companyImageUrl = "https://networks.imdea.org/wp-content/themes/in/img/logo/logo-imdea-networks.png",
+            companyImageUrl = "https://i.ibb.co/dDCcBYG/logo-imdea-networks.png",
             clientName = "",
             clientImageUrl = "",
             location = "Remote",
             startDate = "2018-08-01",
             endDate= "2019-07-31",
-            image = "https://static.esmartcity.es/media/2019/11/presentan-innovador-sistema-basado-5g-situaciones-emergencias-sanitarias-1.png",
+            image = "https://i.ibb.co/LRmdh40/presentan-innovador-sistema-basado-5g-situaciones-emergencias-sanitarias-1.png",
             description =
             "As an **Engineer Trainee** at IMDEA Networks, I participated in the development of a groundbreaking mobile application targeting the healthcare sector, as part of research into **5G networks** and wearable technology. This project was conducted in collaboration with **SAMUR Protección Civil**, focusing on enhancing emergency response systems for patients in critical conditions, such as cardiac arrest.\n" +
                     "\n" +

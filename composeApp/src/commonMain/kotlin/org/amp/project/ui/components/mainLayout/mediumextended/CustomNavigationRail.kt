@@ -52,7 +52,13 @@ fun CustomNavigationRail(
                 modifier = Modifier
                     .size(36.dp)
                     .clip(CircleShape)
-                    .clickable(enabled = !isExpanded){ navigator.navigate(NavigationScreens.Home.route) },
+                    .clickable {
+                        if (!isExpanded) {
+                            navigator.navigate(NavigationScreens.Home.route)
+                        } else {
+                            navigator.navigate(NavigationScreens.Download.route)
+                        }
+                    },
                 imageUrl = Links.AMP_IMAGE_LINK
             )
         },

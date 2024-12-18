@@ -11,7 +11,7 @@ object OtherResumeItemManager {
         ResumeItem(
             id = currentId++,
             itemName = "DriveGuard",
-            itemImageUrl = "https://play-lh.googleusercontent.com/dT60biAUDS3iuxL6W8spwuuqp_VLY4VtRC6cwYv329aifgUxFkh-Gak_pHYDIeNDug=w240-h480-rw",
+            itemImageUrl = "https://i.ibb.co/JxBxy2G/unnamed.webp",
             siteName = "Play Store",
             siteImageUrl = "",
             location = "",
@@ -23,7 +23,7 @@ object OtherResumeItemManager {
         ResumeItem(
             id = currentId++,
             itemName = "Telematics Engineering",
-            itemImageUrl = "https://static.docsity.com/media/avatar/universities/7339.png",
+            itemImageUrl = "https://i.ibb.co/TMzXrFS/7339.png",
             siteName = "UC3M",
             siteImageUrl = "",
             location = "Madrid, Spain",
@@ -35,7 +35,7 @@ object OtherResumeItemManager {
         ResumeItem(
             id = currentId++,
             itemName = "Kotlin Multiplatform Course",
-            itemImageUrl = "https://webautomation.io/static/images/domain_images/Udemy-Emblem_cWmEXOG.png",
+            itemImageUrl = "https://i.ibb.co/8bbTnBk/Udemy-Emblem-c-Wm-EXOG.png",
             siteName = "Udemy",
             siteImageUrl = "",
             location = "",
@@ -47,7 +47,7 @@ object OtherResumeItemManager {
         ResumeItem(
             id = currentId++,
             itemName = "Testing Course",
-            itemImageUrl = "https://webautomation.io/static/images/domain_images/Udemy-Emblem_cWmEXOG.png",
+            itemImageUrl = "https://i.ibb.co/8bbTnBk/Udemy-Emblem-c-Wm-EXOG.png",
             siteName = "Udemy",
             siteImageUrl = "",
             location = "",
@@ -59,7 +59,7 @@ object OtherResumeItemManager {
         ResumeItem(
             id = currentId++,
             itemName = "Jetpack Compose Course",
-            itemImageUrl = "https://webautomation.io/static/images/domain_images/Udemy-Emblem_cWmEXOG.png",
+            itemImageUrl = "https://i.ibb.co/8bbTnBk/Udemy-Emblem-c-Wm-EXOG.png",
             siteName = "Udemy",
             siteImageUrl = "",
             location = "",
