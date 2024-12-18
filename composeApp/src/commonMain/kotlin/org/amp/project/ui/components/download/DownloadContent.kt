@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Download
+import androidx.compose.material.icons.filled.Web
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -18,6 +19,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -27,11 +29,17 @@ import composeResources.amp_logo
 import composeResources.download_app
 import composeResources.download_app_apk
 import composeResources.download_app_description
+import composeResources.go_to_webapp
+import composeResources.visit_webapp
+import composeResources.visit_webapp_description
+import org.amp.project.data.utils.Links
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun DownloadContent(){
+fun DownloadContent(isWeb: Boolean){
+
+    val uriHandler = LocalUriHandler.current
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -44,14 +52,18 @@ fun DownloadContent(){
             modifier = Modifier.size(128.dp)
         )
         Text(
-            text = stringResource(Res.string.download_app),
+            text = if(isWeb){
+                stringResource(Res.string.download_app)
+            } else stringResource(Res.string.visit_webapp),
             style = MaterialTheme.typography.displaySmall,
             fontWeight = FontWeight.Bold,
             letterSpacing = 0.5.sp,
             textAlign = TextAlign.Center
         )
         Text(
-            text = stringResource(Res.string.download_app_description),
+            text =  if(isWeb){
+                stringResource(Res.string.download_app_description)
+            } else stringResource(Res.string.visit_webapp_description),
             style = MaterialTheme.typography.bodyLarge,
             letterSpacing = 0.5.sp,
             textAlign = TextAlign.Center
@@ -60,19 +72,29 @@ fun DownloadContent(){
         Spacer(modifier = Modifier.height(16.dp))
 
         FilledTonalButton(
-            onClick = { /*TODO*/ }
+            onClick = {
+                if(isWeb){
+                    //TODO: Download APK
+                } else  uriHandler.openUri(Links.WEB_APP)
+
+            }
         ){
             Row(
                 modifier = Modifier.wrapContentSize(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Center
+                horizontalArrangement = Arrangement.SpaceBetween
             ){
                 Icon(
-                    imageVector = Icons.Default.Download,
-                    contentDescription = Icons.Default.Download.name
+                    imageVector = if(isWeb){
+                        Icons.Default.Download
+                    } else Icons.Default.Web,
+                    contentDescription = Icons.Default.Web.name
                 )
+                Spacer(modifier = Modifier.size(8.dp))
                 Text(
-                    text = stringResource(Res.string.download_app_apk),
+                    text =  if(isWeb){
+                        stringResource(Res.string.download_app_apk)
+                    } else stringResource(Res.string.go_to_webapp),
                     fontWeight = FontWeight.Bold,
                     letterSpacing = 0.5.sp,
                     textAlign = TextAlign.Center

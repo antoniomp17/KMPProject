@@ -20,5 +20,8 @@
     <string name="download_app">Download the Android App</string>
     <string name="download_app_description">This app is fully developed in kotlin multiplatform and is available for download</string>
     <string name="download_app_apk">Download the APK</string>
+    <string name="visit_webapp">Visit the WebApp</string>
+    <string name="visit_webapp_description">This app is fully developed in kotlin multiplatform and is available in web</string>
+    <string name="go_to_webapp">Go to the WebApp</string>
     <string name="name">Antonio Moraleda Palomino</string>
 </resources>
