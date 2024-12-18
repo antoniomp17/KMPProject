@@ -4,8 +4,24 @@
     <string name="personal_projects">Personal Projects</string>
     <string name="education">Education</string>
     <string name="certifications">Certifications</string>
-
-    <string name="driguard_image_url">https://play-lh.googleusercontent.com/dT60biAUDS3iuxL6W8spwuuqp_VLY4VtRC6cwYv329aifgUxFkh-Gak_pHYDIeNDug=w240-h480-rw</string>
-    <string name="uc3m_image_url">https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Logo_UC3M.svg/2048px-Logo_UC3M.svg.png</string>
-
+    <string name="amp_logo">AMP Logo</string>
+    <string name="image_loaded">Image Loaded</string>
+    <string name="position">Position</string>
+    <string name="company">Company</string>
+    <string name="client">Client</string>
+    <string name="duration">Duration</string>
+    <string name="contact">Contact</string>
+    <string name="languages">Languages</string>
+    <string name="skills">Skills</string>
+    <string name="image_failed_to_load">Image Failed to Load</string>
+    <string name="icon_resource_not_found">Icon resource not found for type</string>
+    <string name="years">Years</string>
+    <string name="resume">Resume</string>
+    <string name="download_app">Download the Android App</string>
+    <string name="download_app_description">This app is fully developed in kotlin multiplatform and is available for download</string>
+    <string name="download_app_apk">Download the APK</string>
+    <string name="visit_webapp">Visit the WebApp</string>
+    <string name="visit_webapp_description">This app is fully developed in kotlin multiplatform and is available in web</string>
+    <string name="go_to_webapp">Go to the WebApp</string>
+    <string name="name">Antonio Moraleda Palomino</string>
 </resources>

@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
@@ -12,7 +11,6 @@ plugins {
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
@@ -47,6 +45,7 @@ kotlin {
         commonMain.dependencies {
             api(compose.foundation)
             api(compose.animation)
+            api(compose.materialIconsExtended)
             implementation(compose.runtime)
             implementation(compose.material3)
             implementation(compose.ui)
@@ -54,12 +53,20 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.runtime.compose)
 
-            //precompose
-            api(libs.moe.tlaster.precompose)
-            api(libs.moe.tlaster.precompose.viewmodel)
-
             //landscapist-glide
             implementation(libs.landscapist.coil3)
+
+            //compose rich editor
+            implementation(libs.richeditor.compose)
+
+            //viewModel
+            implementation(libs.viewmodel)
+
+            //Navigation
+            implementation(libs.navigation)
+
+            //Composables-core
+            implementation(libs.composables.core)
         }
     }
 }
@@ -74,6 +81,7 @@ android {
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
+        signingConfig = signingConfigs.getByName("debug")
     }
     packaging {
         resources {
@@ -98,8 +106,6 @@ compose.resources {
 }
 
 dependencies {
-    implementation(libs.androidx.ui.text.google.fonts)
-    implementation(libs.androidx.material3.android)
     debugImplementation(compose.uiTooling)
 }
 
