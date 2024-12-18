@@ -77,8 +77,8 @@ fun DownloadContent(isWeb: Boolean){
         FilledTonalButton(
             onClick = {
                 if(isWeb){
-                    //TODO: Download APK
-                } else  uriHandler.openUri(Links.WEB_APP)
+                    uriHandler.openUri(Links.APK_LINK)
+                } else uriHandler.openUri(Links.WEB_APP)
 
             }
         ){

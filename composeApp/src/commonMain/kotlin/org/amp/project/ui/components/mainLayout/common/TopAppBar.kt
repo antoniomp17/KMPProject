@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.DarkMode
+import androidx.compose.material.icons.filled.Download
 import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.Web
 import androidx.compose.material3.CenterAlignedTopAppBar
@@ -83,6 +84,15 @@ fun TopAppBar(
                         Icon(
                             imageVector = Icons.Default.Web,
                             contentDescription = Icons.Default.Web.name
+                        )
+                    }
+                } else {
+                    IconButton(onClick = {
+                        uriHandler.openUri(Links.APK_LINK)
+                    }){
+                        Icon(
+                            imageVector = Icons.Default.Download,
+                            contentDescription = Icons.Default.Download.name
                         )
                     }
                 }
