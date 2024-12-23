@@ -46,7 +46,7 @@ fun Navigation(
             }
         } else {
             composable(route = NavigationScreens.Download.route){
-                DownloadScreen()
+                DownloadScreen(themeUiState = themeUiState)
             }
         }
 
