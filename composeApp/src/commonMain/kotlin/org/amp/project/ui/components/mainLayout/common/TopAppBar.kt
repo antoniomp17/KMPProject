@@ -14,7 +14,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalUriHandler
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import composeResources.Res
 import composeResources.amp_logo
@@ -24,6 +26,8 @@ import org.amp.project.data.utils.isWeb
 import org.amp.project.presentation.ThemeViewModel
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -31,8 +35,10 @@ fun TopAppBar(
     scrollBehavior: TopAppBarScrollBehavior? = null,
     topBarType: TopBarTypes? = null,
     navigator: NavHostController? = null,
-    themeViewModel: ThemeViewModel
+    themeViewModel: ThemeViewModel = koinViewModel<ThemeViewModel> { parametersOf() }
 ) {
+    val themeUiState by themeViewModel.uiState.collectAsStateWithLifecycle()
+
     val uriHandler = LocalUriHandler.current
 
     CenterAlignedTopAppBar(
@@ -58,7 +64,7 @@ fun TopAppBar(
         },
         actions = {
             Row{
-                if(themeViewModel.uiState.value.theme?.isDarkTheme == true){
+                if(themeUiState.theme?.isDarkTheme == true){
                     IconButton(onClick = {
                         themeViewModel.changeTheme(false)
                     }){

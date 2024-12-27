@@ -37,16 +37,12 @@ import composeResources.go_to_webapp
 import composeResources.visit_webapp
 import composeResources.visit_webapp_description
 import org.amp.project.data.utils.Links
-import org.amp.project.presentation.ThemeUiState
 import org.amp.project.ui.utils.PutVerticalScrollbarIfWeb
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
-fun DownloadContent(
-    isWeb: Boolean,
-    themeUiState: ThemeUiState,
-){
+fun DownloadContent(isWeb: Boolean) {
 
     val uriHandler = LocalUriHandler.current
 
@@ -54,8 +50,7 @@ fun DownloadContent(
     val state = rememberScrollAreaState(scrollState)
 
     PutVerticalScrollbarIfWeb(
-        state = state,
-        themeUiState = themeUiState
+        state = state
     ){
         Column(
             modifier = Modifier

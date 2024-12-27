@@ -10,37 +10,39 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.composables.core.rememberScrollAreaState
 import composeResources.Res
 import composeResources.amp_logo
 import composeResources.name
 import composeResources.profile_image
-import org.amp.project.presentation.ContactUiState
-import org.amp.project.presentation.ThemeUiState
+import org.amp.project.presentation.ContactViewModel
 import org.amp.project.ui.components.contact.PhoneMailLazyColumnComposable
 import org.amp.project.ui.components.contact.SocialLazyGridComposable
 import org.amp.project.ui.utils.PutVerticalScrollbarIfWeb
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 @Composable
 fun ContactScreen(
-    contactUiState: ContactUiState,
-    themeUiState: ThemeUiState
-){
+    contactViewModel: ContactViewModel = koinViewModel<ContactViewModel> { parametersOf() }
+) {
+    val contactUiState by contactViewModel.uiState.collectAsStateWithLifecycle()
 
     val scrollState = rememberScrollState()
     val state = rememberScrollAreaState(scrollState)
 
     PutVerticalScrollbarIfWeb(
-        state = state,
-        themeUiState = themeUiState
+        state = state
     ){
         Column(
             modifier = Modifier

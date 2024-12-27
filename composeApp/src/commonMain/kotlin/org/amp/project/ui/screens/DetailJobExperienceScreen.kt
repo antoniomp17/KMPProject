@@ -17,7 +17,6 @@ import androidx.compose.ui.unit.dp
 import com.composables.core.rememberScrollAreaState
 import com.mohamedrejeb.richeditor.model.rememberRichTextState
 import org.amp.project.model.JobExperienceItem
-import org.amp.project.presentation.ThemeUiState
 import org.amp.project.ui.components.jobDetail.JobDescription
 import org.amp.project.ui.components.jobDetail.JobDetailsRow
 import org.amp.project.ui.components.jobDetail.JobDuration
@@ -26,20 +25,15 @@ import org.amp.project.ui.utils.CoilImageComposable
 import org.amp.project.ui.utils.PutVerticalScrollbarIfWeb
 
 @Composable
-fun DetailJobExperienceScreen(
-    jobExperience: JobExperienceItem,
-    themeUiState: ThemeUiState
-) {
+fun DetailJobExperienceScreen(jobExperience: JobExperienceItem) {
+
     val richTextState = rememberRichTextState()
     richTextState.setMarkdown(jobExperience.description)
 
     val scrollState = rememberScrollState()
     val state = rememberScrollAreaState(scrollState)
 
-    PutVerticalScrollbarIfWeb(
-        state = state,
-        themeUiState = themeUiState
-    ){
+    PutVerticalScrollbarIfWeb(state = state){
         Column(
             modifier = Modifier
                 .verticalScroll(scrollState)

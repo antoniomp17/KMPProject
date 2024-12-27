@@ -12,13 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import org.amp.project.navigation.Navigation
 import org.amp.project.navigation.NavigationScreens
-import org.amp.project.presentation.ContactUiState
-import org.amp.project.presentation.JobExperienceUiState
-import org.amp.project.presentation.LanguageUiState
-import org.amp.project.presentation.ResumeItemUiState
-import org.amp.project.presentation.SkillUiState
-import org.amp.project.presentation.ThemeUiState
-import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
 import org.amp.project.ui.components.mainLayout.mediumextended.CustomNavigationRail
 import org.amp.project.ui.screens.HomeScreen
@@ -26,14 +19,7 @@ import org.amp.project.ui.screens.HomeScreen
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ExpandedLayout(
-    navigator: NavHostController,
-    jobExperienceUiState: JobExperienceUiState,
-    resumeItemUiState: ResumeItemUiState,
-    contactUiState: ContactUiState,
-    languageUiState: LanguageUiState,
-    skillUiState: SkillUiState,
-    themeUiState: ThemeUiState,
-    themeViewModel: ThemeViewModel
+    navigator: NavHostController
 ) {
 
     Row(
@@ -48,10 +34,7 @@ fun ExpandedLayout(
             modifier = Modifier
                 .weight(2f),
             topBar = {
-                TopAppBar(
-                    scrollBehavior = null,
-                    themeViewModel = themeViewModel
-                )
+                TopAppBar(scrollBehavior = null)
             }
         ) { paddingValues ->
             Box(
@@ -60,9 +43,6 @@ fun ExpandedLayout(
                     .padding(paddingValues)
             ) {
                 HomeScreen(
-                    jobExperienceUiState = jobExperienceUiState,
-                    resumeItemUiState = resumeItemUiState,
-                    themeUiState = themeUiState,
                     onJobExperienceClick = { jobExperience ->
                         navigator.navigate(NavigationScreens.JobExperience.createRoute(jobExperience.id))
                     }
@@ -75,12 +55,6 @@ fun ExpandedLayout(
         ) {
             Navigation(
                 navController = navigator,
-                jobExperienceUiState = jobExperienceUiState,
-                resumeItemUiState = resumeItemUiState,
-                contactUiState = contactUiState,
-                languageUiState = languageUiState,
-                skillUiState = skillUiState,
-                themeUiState = themeUiState,
                 isExpanded = true
             )
         }

@@ -12,13 +12,6 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.navigation.NavHostController
 import org.amp.project.data.utils.TopBarTypes
 import org.amp.project.navigation.Navigation
-import org.amp.project.presentation.ContactUiState
-import org.amp.project.presentation.JobExperienceUiState
-import org.amp.project.presentation.LanguageUiState
-import org.amp.project.presentation.ResumeItemUiState
-import org.amp.project.presentation.SkillUiState
-import org.amp.project.presentation.ThemeUiState
-import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.components.mainLayout.common.TopAppBar
 import org.amp.project.ui.components.mainLayout.compact.CustomBottomAppBar
 
@@ -27,14 +20,7 @@ import org.amp.project.ui.components.mainLayout.compact.CustomBottomAppBar
 fun CompactLayout(
     navigator: NavHostController,
     topBarType: TopBarTypes,
-    scrollBehavior: TopAppBarScrollBehavior,
-    jobExperienceUiState: JobExperienceUiState,
-    resumeItemUiState: ResumeItemUiState,
-    contactUiState: ContactUiState,
-    languageUiState: LanguageUiState,
-    skillUiState: SkillUiState,
-    themeUiState: ThemeUiState,
-    themeViewModel: ThemeViewModel
+    scrollBehavior: TopAppBarScrollBehavior
 ) {
     Scaffold(
         modifier = Modifier
@@ -44,8 +30,7 @@ fun CompactLayout(
             TopAppBar(
                 scrollBehavior = scrollBehavior,
                 topBarType = topBarType,
-                navigator = navigator,
-                themeViewModel = themeViewModel
+                navigator = navigator
             )
         },
         bottomBar = {
@@ -58,13 +43,7 @@ fun CompactLayout(
                 .padding(paddingValues)
         ) {
             Navigation(
-                navController = navigator,
-                jobExperienceUiState = jobExperienceUiState,
-                resumeItemUiState = resumeItemUiState,
-                contactUiState = contactUiState,
-                languageUiState = languageUiState,
-                themeUiState = themeUiState,
-                skillUiState = skillUiState
+                navController = navigator
             )
         }
     }

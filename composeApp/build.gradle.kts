@@ -41,6 +41,9 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
             api(compose.foundation)
@@ -67,6 +70,11 @@ kotlin {
 
             //Composables-core
             implementation(libs.composables.core)
+
+            //koin
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
         }
     }
 }

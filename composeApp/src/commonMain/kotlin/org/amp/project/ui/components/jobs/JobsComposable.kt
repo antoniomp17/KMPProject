@@ -12,15 +12,14 @@ import androidx.compose.ui.unit.dp
 import composeResources.Res
 import composeResources.experience
 import org.amp.project.model.JobExperienceItem
-import org.amp.project.presentation.ThemeUiState
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun JobsComposable(
-    jobExperienceList: List<JobExperienceItem>,
-    themeUiState: ThemeUiState,
-    onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit
-) {
+    onJobExperienceClick: (jobExperience: JobExperienceItem) -> Unit,
+    jobExperienceList: List<JobExperienceItem>
+){
+
     Column(
         verticalArrangement = Arrangement.SpaceBetween
     ){
@@ -31,7 +30,6 @@ fun JobsComposable(
         Spacer(modifier = Modifier.height(4.dp))
         JobsLazyRowComposable(
             jobExperienceList = jobExperienceList,
-            themeUiState = themeUiState,
             onJobExperienceClick = onJobExperienceClick
         )
     }

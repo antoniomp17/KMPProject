@@ -12,27 +12,33 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.composables.core.HorizontalScrollbar
 import com.composables.core.ScrollArea
 import com.composables.core.ScrollAreaState
 import com.composables.core.Thumb
 import com.composables.core.VerticalScrollbar
 import org.amp.project.data.utils.isWeb
-import org.amp.project.presentation.ThemeUiState
+import org.amp.project.presentation.ThemeViewModel
 import org.amp.project.ui.theme.outlineDark
 import org.amp.project.ui.theme.outlineLight
 import org.amp.project.ui.theme.outlineVariantDark
 import org.amp.project.ui.theme.outlineVariantLight
+import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.parameter.parametersOf
 
 @Composable
 fun PutHorizontalScrollbarIfWeb(
     state: ScrollAreaState,
-    themeUiState: ThemeUiState,
+    themeViewModel: ThemeViewModel = koinViewModel<ThemeViewModel> { parametersOf() },
     composable: @Composable () -> Unit
 ) {
+    val themeUiState by themeViewModel.uiState.collectAsStateWithLifecycle()
+
     if(!isWeb()){
         composable()
     } else {
@@ -70,9 +76,11 @@ fun PutHorizontalScrollbarIfWeb(
 @Composable
 fun PutVerticalScrollbarIfWeb(
     state: ScrollAreaState,
-    themeUiState: ThemeUiState,
+    themeViewModel: ThemeViewModel = koinViewModel<ThemeViewModel> { parametersOf() },
     composable: @Composable () -> Unit
 ) {
+    val themeUiState by themeViewModel.uiState.collectAsStateWithLifecycle()
+
     if(!isWeb()){
         composable()
     } else {
