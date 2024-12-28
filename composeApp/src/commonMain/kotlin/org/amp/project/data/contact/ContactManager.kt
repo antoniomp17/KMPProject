@@ -7,7 +7,7 @@ object ContactManager {
 
     private var currentId = 1L
 
-    val fakeJobExperienceList = mutableListOf(
+    val fakeContactList = mutableListOf(
         ContactItem(
             id = currentId++,
             type = ContactItemType.MAIL,

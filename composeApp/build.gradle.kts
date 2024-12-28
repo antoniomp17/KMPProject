@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinPluginSerialization)
 }
 
 kotlin {
@@ -42,8 +43,19 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
 
+            //Koin
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
+
+            //KTor
+            implementation(libs.ktor.client.okhttp)
+
+            //Coroutines
+            implementation(libs.kotlinx.coroutines.android)
+        }
+        wasmJsMain.dependencies {
+            //KTor
+            implementation(libs.ktor.client.js.wasm.js)
         }
         commonMain.dependencies {
             api(compose.foundation)
@@ -75,6 +87,14 @@ kotlin {
             api(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.compose.viewmodel)
+
+            //KTor
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.content.negotiation)
+            implementation(libs.ktor.serialization)
+
+            //Coroutines
+            implementation(libs.kotlinx.coroutines.core)
         }
     }
 }

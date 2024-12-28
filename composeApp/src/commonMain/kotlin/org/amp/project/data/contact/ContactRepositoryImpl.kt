@@ -5,6 +5,6 @@ import org.amp.project.model.ContactItem
 
 class ContactRepositoryImpl(private var contactManager: ContactManager): ContactRepository {
     override fun getAllContacts(): List<ContactItem> {
-        return contactManager.fakeJobExperienceList
+        return contactManager.fakeContactList
     }
 }
